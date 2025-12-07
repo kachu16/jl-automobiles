@@ -39,9 +39,9 @@ const OtherServices = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <h2 className="text-4xl font-extrabold text-center text-pink-600 mb-12">
-          Other Services We Offer
-        </h2>
+      <h2 className="text-4xl font-semibold text-center mb-5">
+                    Other <span className="text-pink-600">Services</span>
+                </h2>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -49,7 +49,7 @@ const OtherServices = () => {
           {services.map((item, index) => (
             <div
               key={index}
-              className="bg-[#f5f7f9] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+              className="p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all"
             >
               <div className="text-5xl mb-4">{item.icon}</div>
 

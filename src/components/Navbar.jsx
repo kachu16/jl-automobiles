@@ -58,6 +58,7 @@ const Navbar = () => {
               Contact
             </a>
           </li>
+
         </ul>
 
         {/* Mobile Hamburger */}
