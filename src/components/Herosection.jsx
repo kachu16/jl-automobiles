@@ -16,13 +16,13 @@ const HeroSection = () => {
   };
 
   const slides = [
-    "https://images.unsplash.com/photo-1647427060118-4911c9821b82?w=1500&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1500&auto=format&fit=crop&q=80",
-    "https://images.unsplash.com/photo-1647427060118-4911c9821b82?w=1500&auto=format&fit=crop&q=80"
+    "hero1.jpg",
+    "hero2.jpg",
+    "hero3.jpg"
   ];
 
   return (
-    <section className="relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
+    <section className="pt-13 relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
 
       {/* CAROUSEL */}
       <Slider {...settings} className="h-full">

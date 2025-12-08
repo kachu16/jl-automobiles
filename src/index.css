@@ -111,3 +111,7 @@
 html {
     scroll-behavior: smooth;
 }
+
+.transition-height {
+  transition: height 0.3s ease;
+}

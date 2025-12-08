@@ -1,34 +1,81 @@
-import React from "react";
-import { FaHeart, FaLeaf, FaUserFriends, FaGlobe } from "react-icons/fa";
+import React, { useState, useRef, useEffect } from "react";
+import {
+    FaTruckLoading,
+    FaShoppingCart,
+    FaTools,
+    FaFilter,
+    FaBolt,
+    FaCogs,
+    FaSync,
+    FaWrench,
+} from "react-icons/fa";
 
-const services = [
+export const services = [
     {
         id: 1,
-        icon: <FaHeart className="text-pink-500 text-3xl" />,
-        title: "Title Goes Here",
-        desc: "Tailored to meet individual needs perfectly balanced.",
+        icon: <FaTruckLoading className="text-pink-500 text-3xl" />,
+        title: "Forklift Rental Services",
+        desc: "Affordable and reliable forklift rental options for short-term and long-term industrial needs, ensuring smooth and efficient material handling.",
     },
     {
         id: 2,
-        icon: <FaLeaf className="text-green-500 text-3xl" />,
-        title: "Title Goes Here",
-        desc: "Tailored to meet individual needs perfectly balanced.",
+        icon: <FaShoppingCart className="text-green-500 text-3xl" />,
+        title: "Forklift Purchasing (Sales)",
+        desc: "High-quality new and used forklifts available at competitive prices. We help you select the perfect model based on your operational needs.",
     },
     {
         id: 3,
-        icon: <FaUserFriends className="text-indigo-500 text-3xl" />,
-        title: "Title Goes Here",
-        desc: "Tailored to meet individual needs perfectly balanced.",
+        icon: <FaTools className="text-indigo-500 text-3xl" />,
+        title: "Forklift Manufacturing & Custom Building",
+        desc: "Custom-built forklifts engineered for durability, heavy-duty performance, and safety, tailored to meet your specific industrial requirements.",
     },
     {
         id: 4,
-        icon: <FaGlobe className="text-orange-500 text-3xl" />,
-        title: "Title Goes Here",
-        desc: "Tailored to meet individual needs perfectly balanced.",
+        icon: <FaFilter className="text-orange-500 text-3xl" />,
+        title: "Filter Maintenance & Replacement",
+        desc: "Expert servicing and replacement of all essential forklift filters—air, fuel, oil, and hydraulic—to ensure clean operation and engine longevity.",
+    },
+    {
+        id: 5,
+        icon: <FaBolt className="text-blue-500 text-3xl" />,
+        title: "Electric Parts Repair & Replacement",
+        desc: "Complete diagnosis and repair of forklift electrical components including wiring, alternators, sensors, and switches for safe and reliable functioning.",
+    },
+    {
+        id: 6,
+        icon: <FaCogs className="text-red-500 text-3xl" />,
+        title: "Clutch System Repair & Servicing",
+        desc: "Comprehensive clutch system inspection, repair, and replacement to ensure smooth gear engagement and optimal power transmission.",
+    },
+    {
+        id: 7,
+        icon: <FaSync className="text-yellow-500 text-3xl" />,
+        title: "Gearbox System Overhauling",
+        desc: "Professional gearbox servicing and overhauling for smooth gear shifting, noise reduction, and enhanced mechanical performance.",
+    },
+    {
+        id: 8,
+        icon: <FaWrench className="text-purple-500 text-3xl" />,
+        title: "Engine & Transmission System Services",
+        desc: "Complete engine overhauling and transmission servicing with premium spare parts to restore power, torque delivery, and operational reliability.",
     },
 ];
 
 const Service = () => {
+    const [showMore, setShowMore] = useState(false);
+    const contentRef = useRef(null);
+    const [height, setHeight] = useState("0px");
+
+    useEffect(() => {
+        if (showMore) {
+            // Expand
+            setHeight(`${contentRef.current.scrollHeight + 40}px`);
+        } else {
+            // Collapse
+            setHeight("0px");
+        }
+    }, [showMore]);
+
     return (
         <section id="services" className="py-20 bg-[#f5f7f9]">
             {/* Heading */}
@@ -42,52 +89,59 @@ const Service = () => {
                 </p>
             </div>
 
-            {/* Services Grid */}
+            {/* Initial 4 Services */}
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-                {services.map((service, index) => (
+                {services.slice(0, 4).map((service) => (
                     <div
                         key={service.id}
                         className="relative bg-white rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
-      transition-all duration-300 ease-out
-    "
+              transition-all duration-300 ease-out"
                     >
                         {/* Floating Icon */}
-                        <div
-                            className="
-      absolute -top-6 left-[-13px]
-      bg-[#f5f7f9] p-3 rounded-full 
-      flex items-center justify-center
-    "
-                        >
+                        <div className="absolute -top-6 left-[-13px] bg-[#f5f7f9] p-3 rounded-full flex items-center justify-center">
                             {service.icon}
                         </div>
 
-                        {/* Title */}
                         <h3 className="text-lg font-semibold mt-4">{service.title}</h3>
-
-                        {/* Description */}
                         <p className="text-gray-600 text-sm mt-2">{service.desc}</p>
-
-                        {/* Read More */}
-                        <button className="cursor-pointer mt-4 text-sm font-medium text-pink-600 flex items-center gap-2 hover:gap-3 transition-all">
-                            Read more →
-                        </button>
                     </div>
-
                 ))}
             </div>
 
-            {/* CTA Button */}
+            {/* Smooth Expand Section */}
+            <div
+                className="overflow-hidden transition-height duration-500 ease-in-out"
+                style={{ height }}
+            >
+                <div ref={contentRef}>
+                    <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 mt-6">
+                        {services.slice(4).map((service) => (
+                            <div
+                                key={service.id}
+                                className="relative bg-white rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
+                  transition-all duration-300 ease-out"
+                            >
+                                <div className="absolute -top-6 left-[-13px] bg-[#f5f7f9] p-3 rounded-full flex items-center justify-center">
+                                    {service.icon}
+                                </div>
+
+                                <h3 className="text-lg font-semibold mt-4">{service.title}</h3>
+                                <p className="text-gray-600 text-sm mt-2">{service.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+            {/* Button */}
             <div className="text-center mt-12">
                 <button
-                    className="
-            bg-pink-600 text-white px-8 py-3 rounded-full
-            font-medium shadow-lg hover:shadow-xl
-            hover:bg-pink-700
-            transition-all duration-300 cursor-pointer
-          "
+                    onClick={() => setShowMore(!showMore)}
+                    className="bg-pink-600 text-white px-8 py-3 rounded-full
+            font-medium shadow-lg hover:shadow-xl hover:bg-pink-700
+            transition-all duration-300 cursor-pointer"
                 >
-                    Explore More →
+                    {showMore ? "Show Less →" : "Explore More →"}
                 </button>
             </div>
         </section>

@@ -25,17 +25,17 @@ const Navbar = () => {
           </li>
 
           <li>
-            <a
-              href="#services"
+            <Link
+              to="#services"
               className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
             >
               Services
-            </a>
+            </Link>
           </li>
 
           <li>
             <a
-              href="/products"
+              href="#products"
               className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
             >
               Products

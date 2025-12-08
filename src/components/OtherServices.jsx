@@ -1,40 +1,73 @@
-import React from "react";
-import { FaHeart, FaLeaf, FaUserFriends, FaGlobe } from "react-icons/fa";
+import {
+  FaCogs,
+  FaTachometerAlt,
+  FaCertificate,
+  FaOilCan,
+  FaCog,
+  FaFan,
+  FaTools,
+  FaCircle,
+} from "react-icons/fa";
 
-const services = [
+export const products = [
   {
     id: 1,
-    icon: <FaHeart className="text-pink-500 text-3xl" />,
-    title: "Title Goes Here",
-    desc: "Tailored to meet individual needs perfectly balanced.",
+    icon: <FaCogs className="text-pink-500 text-3xl" />,
+    title: "Cylinder Seals (All Types)",
+    desc: "Premium-quality cylinder seals designed for long-lasting hydraulic performance and complete leakage prevention for all forklift models.",
   },
   {
     id: 2,
-    icon: <FaLeaf className="text-green-500 text-3xl" />,
-    title: "Title Goes Here",
-    desc: "Tailored to meet individual needs perfectly balanced.",
+    icon: <FaCircle className="text-green-500 text-3xl" />,
+    title: "Solid & Pneumatic Tyres",
+    desc: "Heavy-duty solid tyres for tough surfaces and pneumatic tyres for shock absorption, offering exceptional grip and extended durability.",
   },
   {
     id: 3,
-    icon: <FaUserFriends className="text-indigo-500 text-3xl" />,
-    title: "Title Goes Here",
-    desc: "Tailored to meet individual needs perfectly balanced.",
+    icon: <FaCertificate className="text-indigo-500 text-3xl" />,
+    title: "Tyre Rims",
+    desc: "High-strength forklift tyre rims ensuring perfect alignment, stability, and reliable load handling performance.",
   },
   {
     id: 4,
-    icon: <FaGlobe className="text-orange-500 text-3xl" />,
-    title: "Title Goes Here",
-    desc: "Tailored to meet individual needs perfectly balanced.",
+    icon: <FaFan className="text-orange-500 text-3xl" />,
+    title: "Radiators",
+    desc: "Industrial-grade radiators engineered to prevent engine overheating and enhance cooling performance during heavy operations.",
+  },
+  {
+    id: 5,
+    icon: <FaOilCan className="text-blue-500 text-3xl" />,
+    title: "Engine Oil",
+    desc: "Premium engine oils designed to reduce wear, improve lubrication, and extend the overall life and efficiency of forklift engines.",
+  },
+  {
+    id: 6,
+    icon: <FaCog className="text-red-500 text-3xl" />,
+    title: "Gear Oil",
+    desc: "High-performance gear oils offering smooth gear shifting, excellent heat resistance, and superior load protection.",
+  },
+  {
+    id: 7,
+    icon: <FaTools className="text-yellow-500 text-3xl" />,
+    title: "Brake Oil",
+    desc: "Reliable hydraulic brake oils that ensure quick response, safety, and consistency under all working conditions.",
+  },
+  {
+    id: 8,
+    icon: <FaTachometerAlt className="text-purple-500 text-3xl" />,
+    title: "Transmission Oil",
+    desc: "Advanced transmission oils that improve torque delivery, reduce heat, and maintain smooth forklift performance.",
   },
 ];
 
+
 const OtherServices = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" id="products">
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-4xl font-semibold">
-          Other <span className="text-pink-600">Services</span>
+          Our <span className="text-pink-600">Products</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mt-3">
           Our mission is to drive progress and enhance the lives of our customers by delivering
@@ -44,7 +77,7 @@ const OtherServices = () => {
 
       {/* Services Grid */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-        {services.map((service, index) => (
+        {products.map((service, index) => (
           <div
             key={service.id}
             className="
@@ -69,7 +102,7 @@ const OtherServices = () => {
         ))}
       </div>
 
-      
+
     </section>
   );
 };
