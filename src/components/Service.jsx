@@ -84,8 +84,7 @@ const Service = () => {
                     Our <span className="text-pink-600">Services</span>
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto mt-3">
-                    Our mission is to drive progress and enhance the lives of our customers by delivering
-                    superior products and services that exceed expectations.
+                    At JL Automobiles, we offer a complete range of forklift-related solutions designed to support industries, warehouses, and manufacturing units.
                 </p>
             </div>
 

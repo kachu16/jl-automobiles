@@ -10,7 +10,7 @@ const Navbar = () => {
 
         {/* Logo */}
         <h1 className="text-3xl font-extrabold  text-pink-600 transition-all duration-300">
-          JL AUTOMOBILES
+          JL Automobiles
         </h1>
 
         {/* Desktop Menu */}
@@ -26,34 +26,25 @@ const Navbar = () => {
 
           <li>
             <Link
-              to="#services"
-              className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
-            >
-              Services
-            </Link>
-          </li>
-
-          <li>
-            <a
-              href="#products"
-              className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
-            >
-              Products
-            </a>
-          </li>
-
-          <li>
-            <Link
               to="/about"
               className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
             >
               About
             </Link>
           </li>
+          <li>
+            <Link
+              to="/about"
+              className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
+            >
+              Terms & Conditions
+            </Link>
+          </li>
 
           <li>
             <a
-              href="/contact"
+              href="https://wa.me/+918750028448?text=Hello%20I%20need%20help"
+              target="_blank"
               className="bg-pink-600 font-bold text-white px-4 py-2 rounded transition-all duration-300 hover:bg-pink-700 hover:scale-105"
             >
               Contact

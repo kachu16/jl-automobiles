@@ -70,8 +70,7 @@ const OtherServices = () => {
           Our <span className="text-pink-600">Products</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mt-3">
-          Our mission is to drive progress and enhance the lives of our customers by delivering
-          superior products and services that exceed expectations.
+          Our product range includes all essential components—from tyres and rims to oils, radiators, and precision-engineered cylinder seals
         </p>
       </div>
 
