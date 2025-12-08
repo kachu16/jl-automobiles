@@ -24,13 +24,13 @@ const VisitUs = () => {
 
             <div className="flex gap-4 items-center">
               <span className="text-2xl">📞</span>
-              <p className="font-bold">+91 98765 43210</p>
-              <p className="font-bold">+91 12345 43210</p>
+              <p className="font-semibold">+91 98765 43210</p>
+              <p className="font-semibold">+91 12345 43210</p>
             </div>
 
             <div className="flex gap-4 items-center">
               <span className="text-2xl">✉️</span>
-              <p className="font-bold">contact@jlautomobiles.com</p>
+              <p className="font-semibold">contact@jlautomobiles.com</p>
             </div>
 
           </div>

@@ -1,22 +1,113 @@
 @import "tailwindcss";
 
 * {
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif */
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
 }
 
-@keyframes fadeSlideIn {
+/* Background floating shapes */
+.floating-shapes {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    width: 12px;
+    height: 28px;
+    border-radius: 20px;
+    opacity: 0.6;
+    animation: floatUp 8s linear infinite;
+}
+
+/* Animation */
+@keyframes floatUp {
     0% {
-        opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
     }
 
     100% {
-        opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
     }
 }
 
-.animate-fadeSlideIn {
-    animation: fadeSlideIn 0.6s ease-out forwards;
+.other-service-container {
+    position: relative;
+    overflow: hidden;
+    /* important */
+    transition: 0.4s ease-in-out;
+}
+
+.other-service-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: oklch(59.2% 0.249 0.584);
+    border-top-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+
+    transition: all 0.3s ease-in-out;
+    z-index: 0;
+}
+
+/* HOVER EFFECT */
+.other-service-container:hover::before {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    z-index: -1;
+}
+
+.other-service-container:hover h3,
+.other-service-container:hover p {
+    color: white;
+}
+
+.other-service-container h3,
+.other-service-container p {
+    transition: all .3s ease;
+}
+
+.gallery-grid:hover .gallery-item img {
+    filter: grayscale(100%);
+    opacity: 0.5;
+    transition: 0.3s ease-in-out;
+}
+
+.gallery-grid .gallery-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+@media screen and (min-width:1024px) {
+
+    .testimonial .slick-slide {
+        transform: scale(0.7);
+        opacity: 0.4;
+        transition: all 0.4s ease;
+    }
+
+    .testimonial .slick-center {
+        transform: scale(1) !important;
+        opacity: 1 !important;
+    }
+
+    .testimonial .slick-slide>div {
+        padding: 20px;
+    }
+
+}
+
+html {
+    scroll-behavior: smooth;
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -8,24 +9,24 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
 
         {/* Logo */}
-        <h1 className="text-3xl font-extrabold  text-pink-600 transition-all duration-300 hover:scale-105">
-          JL Automobiles
+        <h1 className="text-3xl font-extrabold  text-pink-600 transition-all duration-300">
+          JL AUTOMOBILES
         </h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-gray-700 font-medium">
           <li>
-            <a
-              href="/"
+            <Link
+              to="/"
               className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
             >
               Home
-            </a>
+            </Link>
           </li>
 
           <li>
             <a
-              href="/services"
+              href="#services"
               className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
             >
               Services
@@ -42,12 +43,12 @@ const Navbar = () => {
           </li>
 
           <li>
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
             >
               About
-            </a>
+            </Link>
           </li>
 
           <li>
@@ -125,9 +126,15 @@ const Navbar = () => {
           </li>
 
         </ul>
+
+
+
       </div>
     </nav>
   );
 };
 
 export default Navbar;
+
+
+

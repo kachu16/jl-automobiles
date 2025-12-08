@@ -1,4 +1,5 @@
 import React from "react";
+import Slider from "react-slick";
 
 const testimonials = [
   {
@@ -19,41 +20,66 @@ const testimonials = [
       "Highly satisfied with the customer support. They helped me choose the perfect car for my family.",
     emoji: "😊",
   },
+  {
+    name: "Kunal Mehra",
+    review:
+      "Amazing customer service! I will definitely recommend JL Automobiles to friends and family.",
+    emoji: "👍",
+  },
 ];
 
-const Testimonial = () => {
+function Testimonial() {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    arrows: false,
+    infinite: true,
+    centerPadding: "0px",
+    slidesToShow: 3,
+    speed: 600,
+    autoplay: true,
+    autoplaySpeed: 3000,
+
+    responsive: [
+      {
+        breakpoint: 1024, // Tablet
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="w-full py-20 px-6">
-      <div className="max-w-7xl mx-auto">
+    <div className="testimonial w-full mx-auto py-20">
+      <h2 className="text-4xl font-semibold text-center mb-10">
+        What Our <span className="text-pink-600">Customers Say</span>
+      </h2>
 
-        {/* Heading */}
-   <h2 className="text-4xl font-semibold text-center mb-5">
-                    What Our <span className="text-pink-600">Customers Say</span>
-                </h2>
+      <Slider {...settings}>
+        {testimonials.map((t, i) => (
+          <div key={i} className="px-3">
+            <div className="relative bg-white rounded-3xl p-8 pt-14 shadow-md hover:scale-[1.03] transition-all duration-300 ease-out text-center border border-pink-200">
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-xl p-8 border border-pink-200 hover:border-pink-400 transition-all animate-slideUp"
-              style={{ animationDelay: `${index * 0.15}s` }}
-            >
-              <div className="text-5xl mb-4">{item.emoji}</div>
+              {/* Floating Emoji */}
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#f5f7f9] p-4 rounded-full flex items-center justify-center text-5xl">
+                {t.emoji}
+              </div>
 
+              {/* Review */}
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                “{item.review}”
+                “{t.review}”
               </p>
 
-              <h3 className="text-xl font-bold text-pink-600">
-                — {item.name}
-              </h3>
+              {/* Name */}
+              <h3 className="text-xl font-bold text-pink-600">— {t.name}</h3>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
-};
+}
 
 export default Testimonial;

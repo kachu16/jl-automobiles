@@ -30,7 +30,7 @@ const services = [
 
 const Service = () => {
     return (
-        <section className="py-20 bg-[#f5f7f9]">
+        <section id="services" className="py-20 bg-[#f5f7f9]">
             {/* Heading */}
             <div className="text-center mb-10">
                 <h2 className="text-4xl font-semibold">
@@ -47,12 +47,9 @@ const Service = () => {
                 {services.map((service, index) => (
                     <div
                         key={service.id}
-                        className="
-      relative bg-white rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
+                        className="relative bg-white rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
       transition-all duration-300 ease-out
-      opacity-0 animate-fadeSlideIn
     "
-                        style={{ animationDelay: `${index * 0.2}s` }}
                     >
                         {/* Floating Icon */}
                         <div
@@ -72,7 +69,7 @@ const Service = () => {
                         <p className="text-gray-600 text-sm mt-2">{service.desc}</p>
 
                         {/* Read More */}
-                        <button className="mt-4 text-sm font-medium text-pink-600 flex items-center gap-2 hover:gap-3 transition-all">
+                        <button className="cursor-pointer mt-4 text-sm font-medium text-pink-600 flex items-center gap-2 hover:gap-3 transition-all">
                             Read more →
                         </button>
                     </div>
@@ -87,10 +84,10 @@ const Service = () => {
             bg-pink-600 text-white px-8 py-3 rounded-full
             font-medium shadow-lg hover:shadow-xl
             hover:bg-pink-700
-            transition-all duration-300
+            transition-all duration-300 cursor-pointer
           "
                 >
-                    Hire Us Today →
+                    Explore More →
                 </button>
             </div>
         </section>
