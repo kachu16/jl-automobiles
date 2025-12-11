@@ -1,85 +1,132 @@
 import React from "react";
 import Slider from "react-slick";
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaLinkedinIn
+} from "react-icons/fa";
 
 const testimonials = [
   {
     name: "Rahul Sharma",
+    role: "Customer",
     review:
       "JL Automobiles gave me the best car buying experience ever. The staff was extremely supportive and knowledgeable!",
-    emoji: "🚗",
+    image:
+      "https://randomuser.me/api/portraits/men/32.jpg",
+    product:
+      "https://i.ibb.co/9cnJxXk/bottle.png"
   },
   {
     name: "Priya Verma",
+    role: "Customer",
     review:
       "Excellent service and quick delivery. Their detailing and maintenance service is top-notch!",
-    emoji: "✨",
+    image:
+      "https://randomuser.me/api/portraits/women/44.jpg",
+    product:
+      "https://i.ibb.co/9cnJxXk/bottle.png"
   },
   {
     name: "Aman Singh",
+    role: "Customer",
     review:
-      "Highly satisfied with the customer support. They helped me choose the perfect car for my family.",
-    emoji: "😊",
-  },
-  {
-    name: "Kunal Mehra",
-    review:
-      "Amazing customer service! I will definitely recommend JL Automobiles to friends and family.",
-    emoji: "👍",
-  },
+      "Highly satisfied with their support team. They helped me choose the perfect car for my family.",
+    image:
+      "https://randomuser.me/api/portraits/men/75.jpg",
+    product:
+      "https://i.ibb.co/9cnJxXk/bottle.png"
+  }
 ];
 
-function Testimonial() {
+const Testimonial = () => {
   const settings = {
-    className: "center",
-    centerMode: true,
+    dots: false,
     arrows: false,
     infinite: true,
-    centerPadding: "0px",
-    slidesToShow: 3,
-    speed: 600,
+    speed: 700,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
-
-    responsive: [
-      {
-        breakpoint: 1024, // Tablet
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-        },
-      },
-    ],
+    autoplaySpeed: 3500
   };
 
   return (
-    <div className="testimonial w-full mx-auto py-20">
-      <h2 className="text-4xl font-semibold text-center mb-10">
-        What Our <span className="text-pink-600">Customers Say</span>
-      </h2>
+    <section className="py-20 px-6">
+      <div className="max-w-4xl mx-auto">
 
-      <Slider {...settings}>
-        {testimonials.map((t, i) => (
-          <div key={i} className="px-3">
-            <div className="relative bg-white rounded-3xl p-8 pt-14 shadow-md hover:scale-[1.03] transition-all duration-300 ease-out text-center border border-pink-200">
+        {/* Heading */}
+        <h2 className="text-4xl font-semibold text-center mb-10">
+          What Our <span className="text-pink-600">Clients Say</span>
+        </h2>
 
-              {/* Floating Emoji */}
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-[#f5f7f9] p-4 rounded-full flex items-center justify-center text-5xl">
-                {t.emoji}
+        <Slider {...settings}>
+          {testimonials.map((t, i) => (
+            <div key={i} className="px-3">
+              <div
+                className="
+                  relative rounded-3xl p-10 shadow-lg 
+                  transition-all duration-500 
+                "
+              >
+                {/* TOP SECTION */}
+                <div className="flex items-center justify-between">
+
+                  {/* PROFILE INFO */}
+                  <div className="flex items-center gap-4">
+
+                    {/* Image + Decorations */}
+                    <div className="relative">
+                      <img
+                        src={t.image}
+                        alt={t.name}
+                        className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md"
+                      />
+
+                      {/* Golden floating dots */}
+                      <span className="w-3 h-3 bg-yellow-600 rounded-full absolute -top-2 left-1"></span>
+                      <span className="w-2 h-2 bg-yellow-500 rounded-full absolute top-3 -left-2"></span>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-bold">{t.name}</h3>
+                      <p className="text-yellow-700">{t.role}</p>
+                    </div>
+                  </div>
+
+                  {/* PRODUCT IMAGE */}
+                  <img
+                    src={t.product}
+                    alt="Product"
+                    className="w-12 h-16 object-contain opacity-90"
+                  />
+                </div>
+
+                {/* REVIEW TEXT */}
+                <p className="text-gray-700 text-lg leading-relaxed mt-6">
+                  “{t.review}”
+                </p>
+
+                {/* SOCIAL ICONS */}
+                <div className="flex gap-5 mt-8">
+                  <a className="p-3 rounded-full border border-yellow-700 text-yellow-700 hover:bg-yellow-700 hover:text-white transition">
+                    <FaTwitter size={18} />
+                  </a>
+                  <a className="p-3 rounded-full border border-yellow-700 text-yellow-700 hover:bg-yellow-700 hover:text-white transition">
+                    <FaFacebookF size={18} />
+                  </a>
+                  <a className="p-3 rounded-full border border-yellow-700 text-yellow-700 hover:bg-yellow-700 hover:text-white transition">
+                    <FaLinkedinIn size={18} />
+                  </a>
+                </div>
+
               </div>
-
-              {/* Review */}
-              <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                “{t.review}”
-              </p>
-
-              {/* Name */}
-              <h3 className="text-xl font-bold text-pink-600">— {t.name}</h3>
             </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
   );
-}
+};
 
 export default Testimonial;

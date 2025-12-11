@@ -60,7 +60,7 @@ const Footer = () => {
           </h3>
 
           <div className="flex gap-5 text-3xl">
-            <a href="#" className="hover:text-pink-400">📘</a>
+            <a href="#" className="hover:text-pink-400">📘 </a>
             <a href="#" className="hover:text-pink-400">📷</a>
             <a href="#" className="hover:text-pink-400">🐦</a>
             <a href="#" className="hover:text-pink-400">▶️</a>
