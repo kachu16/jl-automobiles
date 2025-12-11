@@ -63,8 +63,9 @@ const TermsAndConditions = () => {
 
         {/* CTA */}
         <div className="text-center mt-10">
-          <button
-            className="w-full md:w-auto px-8 py-3 rounded-full shadow-lg transition-all duration-300"
+         <a href="https://wa.me/+919729651574?text=Hello%20I%20need%20assistance%20regarding%20your%20services.%20Please%20help%20me%20with%20the%20details." target="_blank">
+           <button
+            className="w-full md:w-auto px-8 py-3 rounded-full shadow-lg transition-all duration-300 cursor-pointer"
             style={{
               backgroundColor: "var(--primary-color)",
               color: "white",
@@ -78,6 +79,7 @@ const TermsAndConditions = () => {
           >
             Accept & Continue
           </button>
+         </a>
         </div>
       </div>
     </div>

@@ -105,7 +105,7 @@ const Navbar = () => {
           <li>
             <a
               href="https://wa.me/+919729651574?text=Hello%20I%20need%20assistance%20regarding%20your%20services.%20Please%20help%20me%20with%20the%20details.
-"
+" target="_blank"
               className="bg-(--primary-color) text-white px-4 py-2 rounded text-center transition-all duration-300 hover:bg-(--secondary-color) hover:scale-105"
             >
               Contact
