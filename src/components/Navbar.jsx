@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaSun, FaMoon } from "react-icons/fa";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
 
         {/* Logo */}
-        <h1 className="text-3xl font-extrabold  text-pink-600 transition-all duration-300">
+        <h1 className="text-3xl font-extrabold  text-(--primary-color) transition-all duration-300">
           JL Automobiles
         </h1>
 
@@ -18,7 +20,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/"
-              className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
+              className="font-bold transition-all duration-300 hover:text-(--primary-color) hover:scale-105"
             >
               Home
             </Link>
@@ -27,15 +29,15 @@ const Navbar = () => {
           <li>
             <Link
               to="/about"
-              className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
+              className="font-bold transition-all duration-300 hover:text-(--primary-color) hover:scale-105"
             >
               About
             </Link>
           </li>
           <li>
             <Link
-              to="/about"
-              className="font-bold transition-all duration-300 hover:text-pink-600 hover:scale-105"
+              to="/terms-and-conditions"
+              className="font-bold transition-all duration-300 hover:text-(--primary-color) hover:scale-105"
             >
               Terms & Conditions
             </Link>
@@ -45,7 +47,7 @@ const Navbar = () => {
             <a
               href="https://wa.me/+918750028448?text=Hello%20I%20need%20help"
               target="_blank"
-              className="bg-pink-600 font-bold text-white px-4 py-2 rounded transition-all duration-300 hover:bg-pink-700 hover:scale-105"
+              className="bg-(--primary-color) font-bold text-white px-4 py-2 rounded transition-all duration-300 hover:bg-(--secondary-color) hover:scale-105"
             >
               Contact
             </a>
@@ -74,7 +76,7 @@ const Navbar = () => {
           <li>
             <a
               href="/"
-              className="transition-all duration-300 hover:text-pink-600 hover:translate-x-2"
+              className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
             >
               Home
             </a>
@@ -83,7 +85,7 @@ const Navbar = () => {
           <li>
             <a
               href="/services"
-              className="transition-all duration-300 hover:text-pink-600 hover:translate-x-2"
+              className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
             >
               Services
             </a>
@@ -92,7 +94,7 @@ const Navbar = () => {
           <li>
             <a
               href="/products"
-              className="transition-all duration-300 hover:text-pink-600 hover:translate-x-2"
+              className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
             >
               Products
             </a>
@@ -101,7 +103,7 @@ const Navbar = () => {
           <li>
             <a
               href="/about"
-              className="transition-all duration-300 hover:text-pink-600 hover:translate-x-2"
+              className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
             >
               About
             </a>
@@ -110,14 +112,13 @@ const Navbar = () => {
           <li>
             <a
               href="/contact"
-              className="bg-pink-600 text-white px-4 py-2 rounded text-center transition-all duration-300 hover:bg-pink-700 hover:scale-105"
+              className="bg-(--primary-color) text-white px-4 py-2 rounded text-center transition-all duration-300 hover:bg-(--secondary-color) hover:scale-105"
             >
               Contact
             </a>
           </li>
 
         </ul>
-
 
 
       </div>

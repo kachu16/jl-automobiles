@@ -8,6 +8,7 @@ import Testimonial from "./components/Testimonial";
 import VisitUs from "./components/VisitUs";
 import Footer from "./components/Footer";
 import AboutUs from "./components/pages/AboutUs";
+import TermsAndConditions from "./components/pages/TermsAndConditions";
 import "./index.css";
 
 const MainLayout = ({ children }) => (
@@ -37,6 +38,14 @@ const router = createBrowserRouter([
     element: (
       <MainLayout>
         <AboutUs />
+      </MainLayout>
+    ),
+  },
+    {
+    path: "/terms-and-conditions",
+    element: (
+      <MainLayout>
+        <TermsAndConditions />
       </MainLayout>
     ),
   },

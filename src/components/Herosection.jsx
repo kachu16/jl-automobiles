@@ -43,7 +43,7 @@ const HeroSection = () => {
       {/* TEXT ON TOP */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
 
-        <h1 className="text-white text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+        <h1 className="bg-gradient-to-r from-(--primary-color) via-(--secondary-color) to-(--tertiary-color) bg-clip-text text-transparent text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
           JL Automobiles
         </h1>
 
@@ -53,15 +53,15 @@ const HeroSection = () => {
 
         <div className="flex gap-4">
           <a
-            href="/services"
-            className="bg-pink-600 px-4 py-2 rounded-md text-white font-semibold
-                       hover:bg-pink-700 transition-all"
+            href="#services"
+            className="bg-(--primary-color) px-4 py-2 rounded-md text-white font-semibold
+                       hover:bg-(--secondary-color) transition-all"
           >
             Explore Services
           </a>
 
           <a
-            href="/contact"
+            href="#visit-us"
             className="border border-white px-4 py-2 rounded-md text-white font-semibold
                        hover:bg-white hover:text-black transition-all"
           >

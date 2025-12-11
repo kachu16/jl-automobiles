@@ -2,12 +2,12 @@ import React from "react";
 
 const VisitUs = () => {
   return (
-    <div className="w-full bg-gray-50 py-16 px-6">
+    <div id="visit-us" className="w-full bg-gray-50 py-16 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
         {/* LEFT SIDE */}
         <div>
-          <h2 className="text-4xl font-extrabold text-pink-600 mb-6">
+          <h2 className="text-4xl font-extrabold text-(--primary-color) mb-6">
             Visit Us
           </h2>
 
@@ -16,7 +16,7 @@ const VisitUs = () => {
             <div className="flex gap-4 items-start">
               <span className="text-3xl">📍</span>
               <p className="font-bold">
-                <span className="font-semibold text-pink-600 text-xl">JL Automobiles</span><br />
+                <span className="font-semibold text-(--primary-color) text-xl">JL Automobiles</span><br />
                 42/7 Industrial Area, <br />
                 Near Metro Station, Delhi – 110001, India
               </p>

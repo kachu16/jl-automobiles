@@ -13,7 +13,7 @@ import {
 export const services = [
     {
         id: 1,
-        icon: <FaTruckLoading className="text-pink-500 text-3xl" />,
+        icon: <FaTruckLoading className="text-[var(--primary-color)] text-3xl" />,
         title: "Forklift Rental Services",
         desc: "Affordable and reliable forklift rental options for short-term and long-term industrial needs, ensuring smooth and efficient material handling.",
     },
@@ -81,7 +81,7 @@ const Service = () => {
             {/* Heading */}
             <div className="text-center mb-10">
                 <h2 className="text-4xl font-semibold">
-                    Our <span className="text-pink-600">Services</span>
+                    Our <span className="text-(--primary-color)">Services</span>
                 </h2>
                 <p className="text-gray-600 max-w-2xl mx-auto mt-3">
                     At JL Automobiles, we offer a complete range of forklift-related solutions designed to support industries, warehouses, and manufacturing units.
@@ -136,8 +136,8 @@ const Service = () => {
             <div className="text-center mt-12">
                 <button
                     onClick={() => setShowMore(!showMore)}
-                    className="bg-pink-600 text-white px-8 py-3 rounded-full
-            font-medium shadow-lg hover:shadow-xl hover:bg-pink-700
+                    className="bg-(--primary-color) text-white px-8 py-3 rounded-full
+            font-medium shadow-lg hover:shadow-xl hover:bg-(--secondary-color)
             transition-all duration-300 cursor-pointer"
                 >
                     {showMore ? "Show Less →" : "Explore More →"}

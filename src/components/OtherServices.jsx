@@ -12,7 +12,7 @@ import {
 export const products = [
   {
     id: 1,
-    icon: <FaCogs className="text-pink-500 text-3xl" />,
+    icon: <FaCogs className="text-[var(--primary-color)] text-3xl" />,
     title: "Cylinder Seals (All Types)",
     desc: "Premium-quality cylinder seals designed for long-lasting hydraulic performance and complete leakage prevention for all forklift models.",
   },
@@ -67,7 +67,7 @@ const OtherServices = () => {
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-4xl font-semibold">
-          Our <span className="text-pink-600">Products</span>
+          Our <span className="text-(--primary-color)">Products</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mt-3">
           Our product range includes all essential components—from tyres and rims to oils, radiators, and precision-engineered cylinder seals

@@ -14,8 +14,7 @@ const testimonials = [
       "JL Automobiles gave me the best car buying experience ever. The staff was extremely supportive and knowledgeable!",
     image:
       "https://randomuser.me/api/portraits/men/32.jpg",
-    product:
-      "https://i.ibb.co/9cnJxXk/bottle.png"
+
   },
   {
     name: "Priya Verma",
@@ -24,8 +23,7 @@ const testimonials = [
       "Excellent service and quick delivery. Their detailing and maintenance service is top-notch!",
     image:
       "https://randomuser.me/api/portraits/women/44.jpg",
-    product:
-      "https://i.ibb.co/9cnJxXk/bottle.png"
+
   },
   {
     name: "Aman Singh",
@@ -33,9 +31,7 @@ const testimonials = [
     review:
       "Highly satisfied with their support team. They helped me choose the perfect car for my family.",
     image:
-      "https://randomuser.me/api/portraits/men/75.jpg",
-    product:
-      "https://i.ibb.co/9cnJxXk/bottle.png"
+      "https://randomuser.me/api/portraits/men/75.jpg"
   }
 ];
 
@@ -44,7 +40,7 @@ const Testimonial = () => {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 700,
+    speed: 900,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -57,12 +53,12 @@ const Testimonial = () => {
 
         {/* Heading */}
         <h2 className="text-4xl font-semibold text-center mb-10">
-          What Our <span className="text-pink-600">Clients Say</span>
+          What Our <span className="text-(--primary-color)">Clients Say</span>
         </h2>
 
         <Slider {...settings}>
           {testimonials.map((t, i) => (
-            <div key={i} className="px-3">
+            <div key={i} className="p-3">
               <div
                 className="
                   relative rounded-3xl p-10 shadow-lg 
@@ -84,22 +80,17 @@ const Testimonial = () => {
                       />
 
                       {/* Golden floating dots */}
-                      <span className="w-3 h-3 bg-yellow-600 rounded-full absolute -top-2 left-1"></span>
-                      <span className="w-2 h-2 bg-yellow-500 rounded-full absolute top-3 -left-2"></span>
+                      <span className="w-3 h-3 bg-(--secondary-color) rounded-full absolute -top-2 left-1"></span>
+                      <span className="w-2 h-2 bg-(--tertiary-color) rounded-full absolute top-3 -left-2"></span>
                     </div>
 
                     <div>
                       <h3 className="text-xl font-bold">{t.name}</h3>
-                      <p className="text-yellow-700">{t.role}</p>
+                      <p className="text-(--primary-color)">{t.role}</p>
                     </div>
                   </div>
 
-                  {/* PRODUCT IMAGE */}
-                  <img
-                    src={t.product}
-                    alt="Product"
-                    className="w-12 h-16 object-contain opacity-90"
-                  />
+            
                 </div>
 
                 {/* REVIEW TEXT */}
@@ -109,13 +100,13 @@ const Testimonial = () => {
 
                 {/* SOCIAL ICONS */}
                 <div className="flex gap-5 mt-8">
-                  <a className="p-3 rounded-full border border-yellow-700 text-yellow-700 hover:bg-yellow-700 hover:text-white transition">
+                  <a className="p-3 rounded-full border text-(--primary-color) hover:bg-(--primary-color) hover:text-white transition">
                     <FaTwitter size={18} />
                   </a>
-                  <a className="p-3 rounded-full border border-yellow-700 text-yellow-700 hover:bg-yellow-700 hover:text-white transition">
+                  <a className="p-3 rounded-full border text-(--primary-color) hover:bg-(--primary-color) hover:text-white transition">
                     <FaFacebookF size={18} />
                   </a>
-                  <a className="p-3 rounded-full border border-yellow-700 text-yellow-700 hover:bg-yellow-700 hover:text-white transition">
+                  <a className="p-3 rounded-full border text-(--primary-color) hover:bg-(--primary-color) hover:text-white transition">
                     <FaLinkedinIn size={18} />
                   </a>
                 </div>

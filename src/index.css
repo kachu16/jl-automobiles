@@ -1,7 +1,9 @@
 @import "tailwindcss";
 
 :root {
-    --primary-color: oklch(59.2% 0.249 0.584);
+    --primary-color: oklch(69.853% 0.13924 87.064);
+    --secondary-color: oklch(50.125% 0.10037 87.237);
+    --tertiary-color: oklch(70.388% 0.13825 87.464);
 
 }
 
@@ -57,7 +59,7 @@
     width: 20px;
     height: 20px;
 
-    background-color: oklch(89.547% 0.05334 345.878);
+    background-color: oklch(89.444% 0.12462 99.511);
     border-top-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
 
@@ -73,10 +75,7 @@
     z-index: -1;
 }
 
-/* .other-service-container:hover h3,
-.other-service-container:hover p {
-    color: white;
-} */
+
 
 .other-service-container h3,
 .other-service-container p {
@@ -94,24 +93,7 @@
     opacity: 1;
 }
 
-@media screen and (min-width:1024px) {
 
-    .testimonial .slick-slide {
-        transform: scale(0.7);
-        opacity: 0.4;
-        transition: all 0.4s ease;
-    }
-
-    .testimonial .slick-center {
-        transform: scale(1) !important;
-        opacity: 1 !important;
-    }
-
-    .testimonial .slick-slide>div {
-        padding: 20px;
-    }
-
-}
 
 html {
     scroll-behavior: smooth;
@@ -119,4 +101,43 @@ html {
 
 .transition-height {
     transition: height 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.7s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-zoomIn {
+  animation: zoomIn 0.4s ease-out;
 }

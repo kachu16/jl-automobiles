@@ -7,7 +7,7 @@ const Footer = () => {
 
         {/* BRAND SECTION */}
         <div>
-          <h2 className="text-2xl font-extrabold text-pink-600 mb-4">
+          <h2 className="text-2xl font-extrabold text-(--primary-color) mb-4">
             JL Automobiles
           </h2>
           <p className="text-gray-400 leading-relaxed">
@@ -17,21 +17,20 @@ const Footer = () => {
 
         {/* QUICK LINKS */}
         <div>
-          <h3 className="text-xl font-semibold text-pink-500 mb-4">
+          <h3 className="text-xl font-semibold text-(--primary-color) mb-4">
             Quick Links
           </h3>
 
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-pink-400">Home</a></li>
-            <li><a href="#" className="hover:text-pink-400">Services</a></li>
-            <li><a href="#" className="hover:text-pink-400">About Us</a></li>
-            <li><a href="#" className="hover:text-pink-400">Contact</a></li>
+            <li><a href="#" className="hover:text-(--tertiary-color)">Home</a></li>
+            <li><a href="#" className="hover:text-(--tertiary-color)">About</a></li>
+            <li><a href="#" className="hover:text-(--tertiary-color)">Terms & Conditions</a></li>
           </ul>
         </div>
 
         {/* CONTACT INFO */}
         <div>
-          <h3 className="text-xl font-semibold text-pink-500 mb-4">
+          <h3 className="text-xl font-semibold text-(--primary-color) mb-4">
             Contact
           </h3>
 
@@ -55,15 +54,15 @@ const Footer = () => {
 
         {/* SOCIAL MEDIA */}
         <div>
-          <h3 className="text-xl font-semibold text-pink-500 mb-4">
+          <h3 className="text-xl font-semibold text-(--primary-color) mb-4">
             Follow Us
           </h3>
 
           <div className="flex gap-5 text-3xl">
-            <a href="#" className="hover:text-pink-400">📘 </a>
-            <a href="#" className="hover:text-pink-400">📷</a>
-            <a href="#" className="hover:text-pink-400">🐦</a>
-            <a href="#" className="hover:text-pink-400">▶️</a>
+            <a href="#" className="hover:text-(--tertiary-color)">📘 </a>
+            <a href="#" className="hover:text-(--tertiary-color)">📷</a>
+            <a href="#" className="hover:text-(--tertiary-color)">🐦</a>
+            <a href="#" className="hover:text-(--tertiary-color)">▶️</a>
           </div>
         </div>
       </div>
