@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import AboutUs from "./components/pages/AboutUs";
 import TermsAndConditions from "./components/pages/TermsAndConditions";
 import "./index.css";
+import ForkliftSlider from "./components/ForkliftSlider";
 
 const MainLayout = ({ children }) => (
   <div>
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
         <OtherServices />
         <Gallery />
         <Testimonial />
+        <ForkliftSlider/>
         <VisitUs />
       </MainLayout>
     ),

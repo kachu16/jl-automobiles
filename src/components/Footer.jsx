@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -23,8 +24,9 @@ const Footer = () => {
 
           <ul className="space-y-2">
             <li><a href="#" className="hover:text-(--tertiary-color)">Home</a></li>
-            <li><a href="#" className="hover:text-(--tertiary-color)">About</a></li>
-            <li><a href="#" className="hover:text-(--tertiary-color)">Terms & Conditions</a></li>
+            <li><a href="#" className="hover:text-(--tertiary-color)">Services</a></li>
+            <li><a href="#" className="hover:text-(--tertiary-color)">About Us</a></li>
+            <li><a href="#" className="hover:text-(--tertiary-color)">Contact</a></li>
           </ul>
         </div>
 
@@ -59,10 +61,18 @@ const Footer = () => {
           </h3>
 
           <div className="flex gap-5 text-3xl">
-            <a href="#" className="hover:text-(--tertiary-color)">📘 </a>
-            <a href="#" className="hover:text-(--tertiary-color)">📷</a>
-            <a href="#" className="hover:text-(--tertiary-color)">🐦</a>
-            <a href="#" className="hover:text-(--tertiary-color)">▶️</a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/" className="hover:text-(--tertiary-color)">
+              <FaLinkedin />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/" className="hover:text-(--tertiary-color)">
+              <FaInstagram />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/" className="hover:text-(--tertiary-color)">
+              <FaFacebook />
+            </a>
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/" className="hover:text-(--tertiary-color)">
+              <FaTwitter />
+            </a>
           </div>
         </div>
       </div>

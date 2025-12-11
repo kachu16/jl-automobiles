@@ -45,7 +45,8 @@ const Navbar = () => {
 
           <li>
             <a
-              href="https://wa.me/+918750028448?text=Hello%20I%20need%20help"
+              href="https://wa.me/+919729651574?text=Hello%20I%20need%20assistance%20regarding%20your%20services.%20Please%20help%20me%20with%20the%20details.
+"
               target="_blank"
               className="bg-(--primary-color) font-bold text-white px-4 py-2 rounded transition-all duration-300 hover:bg-(--secondary-color) hover:scale-105"
             >
@@ -74,44 +75,37 @@ const Navbar = () => {
         <ul className="bg-white shadow-md flex flex-col gap-4 p-4 text-gray-700 font-medium">
 
           <li>
-            <a
-              href="/"
+            <Link
+              to="/"
               className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
             >
               Home
-            </a>
+            </Link>
           </li>
 
-          <li>
-            <a
-              href="/services"
-              className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
-            >
-              Services
-            </a>
-          </li>
+
 
           <li>
-            <a
-              href="/products"
-              className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
-            >
-              Products
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
             >
               About
-            </a>
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/terms-and-conditions"
+              className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
+            >
+              Terms & Conditions
+            </Link>
           </li>
 
           <li>
             <a
-              href="/contact"
+              href="https://wa.me/+919729651574?text=Hello%20I%20need%20assistance%20regarding%20your%20services.%20Please%20help%20me%20with%20the%20details.
+"
               className="bg-(--primary-color) text-white px-4 py-2 rounded text-center transition-all duration-300 hover:bg-(--secondary-color) hover:scale-105"
             >
               Contact

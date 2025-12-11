@@ -2,7 +2,7 @@ import React from "react";
 
 const VisitUs = () => {
   return (
-    <div id="visit-us" className="w-full bg-gray-50 py-16 px-6">
+    <div id="visit-us" className="w-full py-16 px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
         {/* LEFT SIDE */}
