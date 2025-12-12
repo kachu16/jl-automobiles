@@ -9,6 +9,7 @@ import {
     FaSync,
     FaWrench,
 } from "react-icons/fa";
+import { useTheme } from "../components/context/ThemeContext"; 
 
 export const services = [
     {
@@ -66,25 +67,38 @@ const Service = () => {
     const contentRef = useRef(null);
     const [height, setHeight] = useState("0px");
 
+    const { dark } = useTheme();   
+
     useEffect(() => {
         if (showMore) {
-            // Expand
             setHeight(`${contentRef.current.scrollHeight + 40}px`);
         } else {
-            // Collapse
             setHeight("0px");
         }
     }, [showMore]);
 
     return (
-        <section id="services" className="py-20 bg-[#f5f7f9]">
+        <section
+            id="services"
+            className={`py-20 transition-all duration-300 ${
+                dark ? "dark-bg" : "bg-[#f5f7f9]"
+            }`}
+        >
             {/* Heading */}
             <div className="text-center mb-10">
                 <h2 className="text-4xl font-semibold">
-                    Our <span className="text-(--primary-color)">Services</span>
+                    Our{" "}
+                    <span className="text-(--primary-color)">
+                        Services
+                    </span>
                 </h2>
-                <p className="text-gray-600 max-w-2xl mx-auto mt-3">
-                    At JL Automobiles, we offer a complete range of forklift-related solutions designed to support industries, warehouses, and manufacturing units.
+                <p
+                    className={`max-w-2xl mx-auto mt-3 ${
+                        dark ? "text-gray-300" : "text-gray-600"
+                    }`}
+                >
+                    At JL Automobiles, we offer a complete range of forklift-related solutions
+                    designed to support industries, warehouses, and manufacturing units.
                 </p>
             </div>
 
@@ -93,21 +107,32 @@ const Service = () => {
                 {services.slice(0, 4).map((service) => (
                     <div
                         key={service.id}
-                        className="relative bg-white rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
-              transition-all duration-300 ease-out"
+                        className={`relative rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
+                        transition-all duration-300 ease-out ${
+                            dark ? "bg-[#1f1f1f] text-white shadow-lg" : "bg-white"
+                        }`}
                     >
-                        {/* Floating Icon */}
-                        <div className="absolute -top-6 left-[-13px] bg-[#f5f7f9] p-3 rounded-full flex items-center justify-center">
+                        <div
+                            className={`absolute -top-6 left-[-13px] p-3 rounded-full flex items-center justify-center ${
+                                dark ? "bg-[#111826]" : "bg-[#f5f7f9]"
+                            }`}
+                        >
                             {service.icon}
                         </div>
 
                         <h3 className="text-lg font-semibold mt-4">{service.title}</h3>
-                        <p className="text-gray-600 text-sm mt-2">{service.desc}</p>
+                        <p
+                            className={`text-sm mt-2 ${
+                                dark ? "text-gray-300" : "text-gray-600"
+                            }`}
+                        >
+                            {service.desc}
+                        </p>
                     </div>
                 ))}
             </div>
 
-            {/* Smooth Expand Section */}
+            {/* Expand Section */}
             <div
                 className="overflow-hidden transition-height duration-500 ease-in-out"
                 style={{ height }}
@@ -117,15 +142,27 @@ const Service = () => {
                         {services.slice(4).map((service) => (
                             <div
                                 key={service.id}
-                                className="relative bg-white rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
-                  transition-all duration-300 ease-out"
+                                className={`relative rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
+                                transition-all duration-300 ease-out ${
+                                   dark ? "bg-[#1f1f1f] text-white shadow-lg" : "bg-white"
+                                }`}
                             >
-                                <div className="absolute -top-6 left-[-13px] bg-[#f5f7f9] p-3 rounded-full flex items-center justify-center">
+                                <div
+                                    className={`absolute -top-6 left-[-13px] p-3 rounded-full flex items-center justify-center ${
+                                        dark ? "bg-[#111826]" : "bg-[#f5f7f9]"
+                                    }`}
+                                >
                                     {service.icon}
                                 </div>
 
                                 <h3 className="text-lg font-semibold mt-4">{service.title}</h3>
-                                <p className="text-gray-600 text-sm mt-2">{service.desc}</p>
+                                <p
+                                    className={`text-sm mt-2 ${
+                                        dark ? "text-gray-300" : "text-gray-600"
+                                    }`}
+                                >
+                                    {service.desc}
+                                </p>
                             </div>
                         ))}
                     </div>
@@ -137,8 +174,8 @@ const Service = () => {
                 <button
                     onClick={() => setShowMore(!showMore)}
                     className="bg-(--primary-color) text-white px-8 py-3 rounded-full
-            font-medium shadow-lg hover:shadow-xl hover:bg-(--secondary-color)
-            transition-all duration-300 cursor-pointer"
+                    font-medium shadow-lg hover:shadow-xl hover:bg-(--secondary-color)
+                    transition-all duration-300 cursor-pointer"
                 >
                     {showMore ? "Show Less →" : "Explore More →"}
                 </button>

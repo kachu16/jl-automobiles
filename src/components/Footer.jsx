@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLinkedin, FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,9 +9,11 @@ const Footer = () => {
 
         {/* BRAND SECTION */}
         <div>
-          <h2 className="text-2xl font-extrabold text-(--primary-color) mb-4">
-            JL Automobiles
-          </h2>
+          <Link to="/">
+            <h2 className="cursor-pointer text-2xl font-extrabold text-(--primary-color) mb-4">
+              JL Automobiles
+            </h2>
+          </Link>
           <p className="text-gray-400 leading-relaxed">
             Premium automobiles, trusted service, and a commitment to excellence.
           </p>
@@ -23,14 +26,13 @@ const Footer = () => {
           </h3>
 
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-(--tertiary-color)">Home</a></li>
-            <li><a href="#" className="hover:text-(--tertiary-color)">Services</a></li>
-            <li><a href="#" className="hover:text-(--tertiary-color)">About Us</a></li>
-            <li><a href="#" className="hover:text-(--tertiary-color)">Contact</a></li>
+            <li><Link to="/" className="hover:text-(--tertiary-color)">Home</Link></li>
+            <li><Link to="/about" className="hover:text-(--tertiary-color)">About Us</Link></li>
+            <li><Link to="/terms-and-conditions" className="hover:text-(--tertiary-color)">Terms & Conditions</Link></li>
           </ul>
         </div>
 
-        {/* CONTACT INFO */}
+        {/* CONTACT INFO (UPDATED AS PER CARD) */}
         <div>
           <h3 className="text-xl font-semibold text-(--primary-color) mb-4">
             Contact
@@ -39,17 +41,20 @@ const Footer = () => {
           <ul className="space-y-3">
             <li className="flex items-start gap-3">
               <span className="text-2xl">📍</span>
-              <p>42/7 Industrial Area, Delhi – 110001, India</p>
+              <p>Near Durga Mandir, Naichana Road, Bawal (Rewari), Haryana</p>
             </li>
 
             <li className="flex items-center gap-3">
               <span className="text-2xl">📞</span>
-              <p>+91 98765 43210</p>
+              <p>
+                09215686748 <br />
+                09446586748
+              </p>
             </li>
 
             <li className="flex items-center gap-3">
               <span className="text-2xl">✉️</span>
-              <p>contact@jlautomobiles.com</p>
+              <p>contact.jlautomobiles@gmail.com</p>
             </li>
           </ul>
         </div>

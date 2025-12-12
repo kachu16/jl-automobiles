@@ -8,6 +8,7 @@ import {
   FaTools,
   FaCircle,
 } from "react-icons/fa";
+import { useTheme } from "../components/context/ThemeContext";
 
 export const products = [
   {
@@ -62,14 +63,17 @@ export const products = [
 
 
 const OtherServices = () => {
+  const { dark } = useTheme();
+
   return (
-    <section className="py-20 bg-white" id="products">
+    <section className={`py-20 product-container ${dark ? "dark-bg2" : "bg-white"
+      }`} id="products">
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-4xl font-semibold">
           Our <span className="text-(--primary-color)">Products</span>
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mt-3">
+        <p className={`max-w-2xl mx-auto mt-3 ${dark ? "text-white" : "text-gray-600"}`}>
           Our product range includes all essential components—from tyres and rims to oils, radiators, and precision-engineered cylinder seals
         </p>
       </div>
@@ -79,10 +83,10 @@ const OtherServices = () => {
         {products.map((service, index) => (
           <div
             key={service.id}
-            className="
-      relative bg-gray-50 rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
-      transition-all duration-300 ease-out other-service-container cursor-pointer
-    "
+            className={`
+      relative  rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
+      transition-all duration-300 ease-out other-service-container cursor-pointer ${dark ? "bg-[#1f1f1f] " : "bg-gray-50"}
+    `}
           >
             {/* Floating Icon */}
             <div
@@ -94,7 +98,7 @@ const OtherServices = () => {
             <h3 className="text-lg font-semibold mt-4">{service.title}</h3>
 
             {/* Description */}
-            <p className="text-gray-600 text-sm mt-2">{service.desc}</p>
+            <p className={` text-sm mt-2 ${dark ? "text-white" : "text-gray-600"}`}>{service.desc}</p>
 
           </div>
 

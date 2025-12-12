@@ -1,106 +1,59 @@
 @import "tailwindcss";
 
 :root {
-    --primary-color: oklch(69.853% 0.13924 87.064);
-    --secondary-color: oklch(50.125% 0.10037 87.237);
-    --tertiary-color: oklch(70.388% 0.13825 87.464);
+  --primary-color: oklch(69.853% 0.13924 87.064);
+  --secondary-color: oklch(50.125% 0.10037 87.237);
+  --tertiary-color: oklch(70.388% 0.13825 87.464);
 
 }
 
 * {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 700;
-}
-
-/* Background floating shapes */
-.floating-shapes {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.shape {
-    position: absolute;
-    width: 12px;
-    height: 28px;
-    border-radius: 20px;
-    opacity: 0.6;
-    animation: floatUp 8s linear infinite;
-}
-
-/* Animation */
-@keyframes floatUp {
-    0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateY(-10vh) rotate(360deg);
-        opacity: 0;
-    }
+  font-family: "Ubuntu", sans-serif;
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-weight: 700;
 }
 
 .other-service-container {
-    position: relative;
-    overflow: hidden;
-    /* important */
-    transition: 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
 }
 
 .other-service-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 20px;
-    height: 20px;
-
-    background-color: oklch(89.444% 0.12462 99.511);
-    border-top-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
-
-    transition: all 0.3s ease-in-out;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(240, 220, 106);
+  border-top-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  z-index: 0;
 }
+.product-container.dark-bg2 .other-service-container::before{
+  background-color: #6f6949;
+} 
 
-/* HOVER EFFECT */
 .other-service-container:hover::before {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  z-index: -1;
 }
-
-
 
 .other-service-container h3,
 .other-service-container p {
-    transition: all .3s ease;
+  transition: all .3s ease;
 }
-
-.gallery-grid:hover .gallery-item img {
-    filter: grayscale(100%);
-    opacity: 0.5;
-    transition: 0.3s ease-in-out;
-}
-
-.gallery-grid .gallery-item:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 .transition-height {
-    transition: height 0.3s ease;
+  transition: height 0.3s ease;
 }
 
 @keyframes slideUp {
@@ -108,6 +61,7 @@ html {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -119,8 +73,13 @@ html {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fadeIn {
@@ -132,6 +91,7 @@ html {
     transform: scale(0.8);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -140,4 +100,14 @@ html {
 
 .animate-zoomIn {
   animation: zoomIn 0.4s ease-out;
+}
+
+.dark-bg {
+  background-color: #111826;
+  color: white
+}
+
+.dark-bg2 {
+  background-color: #000102;
+  color: white
 }

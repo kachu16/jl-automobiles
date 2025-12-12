@@ -1,5 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
+import { useTheme } from "../components/context/ThemeContext";
+
 import {
   FaTwitter,
   FaFacebookF,
@@ -36,6 +38,9 @@ const testimonials = [
 ];
 
 const Testimonial = () => {
+    const { dark } = useTheme();
+  
+
   const settings = {
     dots: false,
     arrows: false,
@@ -48,7 +53,7 @@ const Testimonial = () => {
   };
 
   return (
-    <section className="py-20 px-6">
+    <section className={`py-20 px-6 ${dark ? 'dark-bg2' : "bg-white"}`}>
       <div className="max-w-4xl mx-auto">
 
         {/* Heading */}
@@ -62,7 +67,7 @@ const Testimonial = () => {
               <div
                 className="
                   relative rounded-3xl p-10 shadow-lg 
-                  transition-all duration-500 
+                  transition-all duration-500 border-2 border-gray-300
                 "
               >
                 {/* TOP SECTION */}
@@ -94,7 +99,7 @@ const Testimonial = () => {
                 </div>
 
                 {/* REVIEW TEXT */}
-                <p className="text-gray-700 text-lg leading-relaxed mt-6">
+                <p className={`text-lg leading-relaxed mt-6 ${dark ? "text-white" : "text-gray-700"}`}>
                   “{t.review}”
                 </p>
 

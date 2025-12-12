@@ -22,7 +22,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="pt-13 relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
+    <section className="pt-15 relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
 
       {/* CAROUSEL */}
       <Slider {...settings} className="h-full">

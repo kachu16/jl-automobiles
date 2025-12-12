@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "../components/context/ThemeContext";
 
 const images = [
   "https://imgs.search.brave.com/aSW37h56vUQqGePJJCctq6-2aXSFsgN2ierTxFqs-3A/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/c2h1dHRlcnN0b2Nr/LmNvbS9pbWFnZS1w/aG90by9uZW9uLTNk/LWltYWdlLWZvcmts/aWZ0LXdhcmVob3Vz/ZS02MDBudy0yNDA1/MjE4OTU1LmpwZw",
@@ -11,25 +12,26 @@ const images = [
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const { dark } = useTheme();
 
   return (
-    <section className="bg-[#f5f7f9] w-full py-20 px-6">
+    <section className={`  w-full py-20 px-6 transition-all duration-300 ${
+                dark ? "dark-bg" : "bg-[#f5f7f9]"
+            }`}>
       <div className="max-w-7xl mx-auto">
 
-        {/* Heading */}
-        <h2 className="text-4xl font-semibold mb-5 text-center">
+        <h2 className={`text-4xl font-semibold mb-5 text-center ${dark ? "text-white" : "text-black"}`}>
           Our <span className="text-(--primary-color)">Gallery</span>
         </h2>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-10">
           {images.map((img, index) => (
             <div
               key={index}
               className="
-                group rounded-2xl shadow-xl overflow-hidden relative 
+                group rounded-2xl shadow-xl dark:shadow-lg dark:bg-dark-bg2 overflow-hidden relative 
                 transform transition-all duration-700 
-                hover:-translate-y-2 hover:shadow-2xl
+                hover:-translate-y-2 hover:shadow-2xl dark:hover:shadow-xl
                 animate-slideUp
               "
               style={{ animationDelay: `${index * 0.15}s` }}
@@ -48,10 +50,9 @@ const Gallery = () => {
                   "
                 />
 
-                {/* Overlay */}
                 <div
                   className="
-                    absolute inset-0 bg-black/40 backdrop-blur-sm
+                    absolute inset-0 bg-black/40 dark:bg-black/60 backdrop-blur-sm
                     opacity-0 group-hover:opacity-100 
                     transition-all duration-700 flex items-center justify-center
                   "
@@ -71,11 +72,10 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* FULLSCREEN IMAGE MODAL */}
         {selectedImage && (
           <div
             className="
-              fixed inset-0 bg-black/70 backdrop-blur-md z-50 
+              fixed inset-0 bg-black/70 dark:bg-black/80 backdrop-blur-md z-50 
               flex items-center justify-center animate-fadeIn
             "
           >
@@ -92,17 +92,15 @@ const Gallery = () => {
             </button>
 
             {/* Fullscreen Image */}
-          {/* Fullscreen Image */}
-<img
-  src={selectedImage}
-  alt="fullscreen"
-  className="
-    w-[700px] h-[450px] 
-    object-cover 
-    rounded-xl shadow-2xl animate-zoomIn
-  "
-/>
-
+            <img
+              src={selectedImage}
+              alt="fullscreen"
+              className="
+                w-[700px] h-[450px] 
+                object-cover 
+                rounded-xl shadow-2xl animate-zoomIn
+              "
+            />
           </div>
         )}
       </div>
