@@ -9,7 +9,7 @@ import {
     FaSync,
     FaWrench,
 } from "react-icons/fa";
-import { useTheme } from "../components/context/ThemeContext"; 
+import { useTheme } from "../components/context/ThemeContext";
 
 export const services = [
     {
@@ -67,7 +67,7 @@ const Service = () => {
     const contentRef = useRef(null);
     const [height, setHeight] = useState("0px");
 
-    const { dark } = useTheme();   
+    const { dark } = useTheme();
 
     useEffect(() => {
         if (showMore) {
@@ -80,9 +80,8 @@ const Service = () => {
     return (
         <section
             id="services"
-            className={`py-20 transition-all duration-300 ${
-                dark ? "dark-bg" : "bg-[#f5f7f9]"
-            }`}
+            className={`py-20 transition-all duration-300 ${dark ? "dark-bg" : "bg-[#f5f7f9]"
+                }`}
         >
             {/* Heading */}
             <div className="text-center mb-10">
@@ -93,9 +92,8 @@ const Service = () => {
                     </span>
                 </h2>
                 <p
-                    className={`max-w-2xl mx-auto mt-3 ${
-                        dark ? "text-gray-300" : "text-gray-600"
-                    }`}
+                    className={`max-w-2xl mx-auto mt-3 ${dark ? "text-gray-300" : "text-gray-600"
+                        }`}
                 >
                     At JL Automobiles, we offer a complete range of forklift-related solutions
                     designed to support industries, warehouses, and manufacturing units.
@@ -105,30 +103,34 @@ const Service = () => {
             {/* Initial 4 Services */}
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
                 {services.slice(0, 4).map((service) => (
-                    <div
-                        key={service.id}
-                        className={`relative rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
-                        transition-all duration-300 ease-out ${
-                            dark ? "bg-[#1f1f1f] text-white shadow-lg" : "bg-white"
-                        }`}
-                    >
-                        <div
-                            className={`absolute -top-6 left-[-13px] p-3 rounded-full flex items-center justify-center ${
-                                dark ? "bg-[#111826]" : "bg-[#f5f7f9]"
-                            }`}
-                        >
-                            {service.icon}
+                    <div key={service.id} className="service-main group relative overflow-hidden rounded-xl">
+                        {/* IMAGE */}
+                        <img
+                            src="https://imgs.search.brave.com/CTw4XD4TT1YMthDsy4FIiZJMtI_K8Fu9d7kYaK6NIs4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9m/b3JrbGlmdC10cnVj/ay1pcy1saWZ0aW5n/LXBhbGxldC13aXRo/LWNhcmRib2FyZC1i/b3hlc18zNTkxMy0x/OTI1LmpwZz9zZW10/PWFpc191c2VyX3Bl/cnNvbmFsaXphdGlv/biZ3PTc0MCZxPTgw"
+                            alt={service.title}
+                            className="w-full h-64 object-cover"
+                        />
+
+                        <div className="service-overlay"></div>
+                        {/* TITLE BLOCK */}
+                        <div className="service-title">
+                            <h3 className="font-bold text-white">
+                                {service.title}
+                            </h3>
+                            <div className="w-8 h-1 bg-(--primary-color) mt-1"></div>
                         </div>
 
-                        <h3 className="text-lg font-semibold mt-4">{service.title}</h3>
+                        {/* ACCENT LINE */}
                         <p
-                            className={`text-sm mt-2 ${
-                                dark ? "text-gray-300" : "text-gray-600"
-                            }`}
+                            className="service-para mt-4 text-sm text-gray-200 max-w-md
+               
+                 transition-all duration-500
+              "
                         >
                             {service.desc}
                         </p>
                     </div>
+
                 ))}
             </div>
 
@@ -140,26 +142,29 @@ const Service = () => {
                 <div ref={contentRef}>
                     <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 mt-6">
                         {services.slice(4).map((service) => (
-                            <div
-                                key={service.id}
-                                className={`relative rounded-3xl p-6 pt-10 mb-2 shadow-md hover:scale-[1.03]
-                                transition-all duration-300 ease-out ${
-                                   dark ? "bg-[#1f1f1f] text-white shadow-lg" : "bg-white"
-                                }`}
-                            >
-                                <div
-                                    className={`absolute -top-6 left-[-13px] p-3 rounded-full flex items-center justify-center ${
-                                        dark ? "bg-[#111826]" : "bg-[#f5f7f9]"
-                                    }`}
-                                >
-                                    {service.icon}
+                            <div key={service.id} className="service-main group relative overflow-hidden rounded-xl">
+                                {/* IMAGE */}
+                                <img
+                                    src="https://imgs.search.brave.com/CTw4XD4TT1YMthDsy4FIiZJMtI_K8Fu9d7kYaK6NIs4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9m/b3JrbGlmdC10cnVj/ay1pcy1saWZ0aW5n/LXBhbGxldC13aXRo/LWNhcmRib2FyZC1i/b3hlc18zNTkxMy0x/OTI1LmpwZz9zZW10/PWFpc191c2VyX3Bl/cnNvbmFsaXphdGlv/biZ3PTc0MCZxPTgw"
+                                    alt={service.title}
+                                    className="w-full h-64 object-cover"
+                                />
+                                <div className="service-overlay"></div>
+
+                                {/* TITLE BLOCK */}
+                                <div className="service-title">
+                                    <h3 className="font-bold text-white">
+                                        {service.title}
+                                    </h3>
+                                    <div className="w-8 h-1 bg-(--primary-color) mt-1"></div>
                                 </div>
 
-                                <h3 className="text-lg font-semibold mt-4">{service.title}</h3>
+                                {/* ACCENT LINE */}
                                 <p
-                                    className={`text-sm mt-2 ${
-                                        dark ? "text-gray-300" : "text-gray-600"
-                                    }`}
+                                    className="service-para mt-4 text-sm text-gray-200 max-w-md
+               
+                 transition-all duration-500
+              "
                                 >
                                     {service.desc}
                                 </p>

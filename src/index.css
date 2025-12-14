@@ -8,69 +8,14 @@
 }
 
 * {
-  font-family: "Ubuntu", sans-serif;
-  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-weight: 700;
-}
-
-.other-service-container {
-  position: relative;
-  overflow: hidden;
-  transition: 0.4s ease-in-out;
-}
-
-.other-service-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  background-color: rgb(240, 220, 106);
-  border-top-left-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
-  transition: all 0.3s ease-in-out;
-  z-index: 0;
-}
-.product-container.dark-bg2 .other-service-container::before{
-  background-color: #6f6949;
-} 
-
-.other-service-container:hover::before {
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
-  z-index: -1;
-}
-
-.other-service-container h3,
-.other-service-container p {
-  transition: all .3s ease;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-.transition-height {
-  transition: height 0.3s ease;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-slideUp {
-  animation: slideUp 0.7s ease forwards;
-}
 
 @keyframes fadeIn {
   from {
@@ -110,4 +55,79 @@ html {
 .dark-bg2 {
   background-color: #000102;
   color: white
+}
+
+.service-title {
+  position: absolute;
+  top: 190px;
+  transition: top 0.5s ease;
+  width: 94%;
+  left: 10px;
+}
+
+.service-main:hover .service-title {
+  top: 15px;
+}
+
+.service-para {
+  position: absolute;
+  top: 300px;
+  opacity: 0;
+  transition: top 0.5s ease, opacity 0.5s ease;
+  width: 94%;
+  left: 10px;
+}
+
+.service-main:hover .service-para {
+  top: 60px;
+  opacity: 1;
+}
+
+.service-main:hover .other-service-para {
+  top: 80px;
+  opacity: 1;
+}
+
+.service-main {
+  position: relative;
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0));
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+
+.service-main:hover .service-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.service-title,
+.service-para {
+  position: absolute;
+  z-index: 2;
+}
+
+
+
+.service-main .slick-dots {
+  position: absolute;
+  bottom: 10px;
+  z-index: 10;
+}
+
+.slick-dots li button:before {
+  color: #ffffff;
+  opacity: 0.5;
+  font-size: 10px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--primary-color);
+  opacity: 1;
 }

@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/Herosection";
 import Service from "./components/Service";
 import OtherServices from "./components/OtherServices";
-import Gallery from "./components/Gallery";
 import Testimonial from "./components/Testimonial";
 import VisitUs from "./components/VisitUs";
 import Footer from "./components/Footer";
@@ -11,6 +10,8 @@ import AboutUs from "./components/pages/AboutUs";
 import TermsAndConditions from "./components/pages/TermsAndConditions";
 import "./index.css";
 import ForkliftSlider from "./components/ForkliftSlider";
+import Products from "./components/Products";
+import ProductDetails from "./components/ProductDetails";
 
 const MainLayout = ({ children }) => (
   <div>
@@ -28,7 +29,7 @@ const router = createBrowserRouter([
         <HeroSection />
         <Service />
         <OtherServices />
-        <Gallery />
+        <Products />
         <Testimonial />
         <ForkliftSlider/>
         <VisitUs />
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       </MainLayout>
     ),
   },
+  {
+    path:"/products/:id",
+    element : <ProductDetails/>
+  }
 ]);
 
 export default function App() {

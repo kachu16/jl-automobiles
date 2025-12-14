@@ -22,7 +22,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="pt-15 relative w-full h-[80vh] md:h-[90vh] overflow-hidden">
+    <section className="pt-15 relative w-full h-[80vh] md:h-[100vh] overflow-hidden">
 
       {/* CAROUSEL */}
       <Slider {...settings} className="h-full">
@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div key={i}>
             <img
               src={src}
-              className="w-full h-[80vh] md:h-[90vh] object-cover"
+              className="w-full h-[80vh] md:h-[100vh] object-cover"
               alt=""
             />
           </div>
