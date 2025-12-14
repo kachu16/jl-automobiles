@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/Herosection";
 import Service from "./components/Service";
@@ -8,10 +9,10 @@ import VisitUs from "./components/VisitUs";
 import Footer from "./components/Footer";
 import AboutUs from "./components/pages/AboutUs";
 import TermsAndConditions from "./components/pages/TermsAndConditions";
-import "./index.css";
 import ForkliftSlider from "./components/ForkliftSlider";
-import Products from "./components/Products";
-import ProductDetails from "./components/ProductDetails";
+import ProductDetails from "./components/pages/ProductDetails";
+import Products from "./components/pages/Products";
+import ForkliftCategories from "./components/ForkliftCategories";
 
 const MainLayout = ({ children }) => (
   <div>
@@ -29,9 +30,9 @@ const router = createBrowserRouter([
         <HeroSection />
         <Service />
         <OtherServices />
-        <Products />
+        <ForkliftCategories/>
         <Testimonial />
-        <ForkliftSlider/>
+        <ForkliftSlider />
         <VisitUs />
       </MainLayout>
     ),
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
       </MainLayout>
     ),
   },
-    {
+  {
     path: "/terms-and-conditions",
     element: (
       <MainLayout>
@@ -53,8 +54,16 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path:"/products/:id",
-    element : <ProductDetails/>
+    path: "/products",
+    element: (
+      <MainLayout>
+        <Products />
+      </MainLayout>
+    ),
+  },
+  {
+    path: "/products/:id",
+    element: <ProductDetails />
   }
 ]);
 

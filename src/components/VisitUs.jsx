@@ -6,7 +6,7 @@ const VisitUs = () => {
 
 
   return (
-    <div id="visit-us" className={`w-full py-16 px-6 ${dark? "dark-bg2" : "bg-white"}`}>
+    <div id="visit-us" className={`w-full py-16 px-6 ${dark ? "dark-bg2" : "bg-white"}`}>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
 
         {/* LEFT SIDE */}
@@ -20,8 +20,8 @@ const VisitUs = () => {
             {/* ADDRESS */}
             <div className="flex gap-4 items-start">
               <span className="text-3xl">📍</span>
-              <p className="font-bold">
-                <span className="font-semibold text-(--primary-color) text-xl">
+              <p >
+                <span className=" text-(--primary-color) text-xl">
                   JL Automobiles
                 </span>
                 <br />
@@ -33,14 +33,33 @@ const VisitUs = () => {
             {/* PHONE NUMBERS */}
             <div className="flex gap-4 items-center">
               <span className="text-2xl">📞</span>
-              <p className="font-semibold">+91-9215686748</p>
-              <p className="font-semibold">+91-9215686747</p>
+              <p>  <a
+                href="tel:+919215686748"
+                className=" hover:underline"
+              >
+                +91-9215686748
+              </a></p>
+              <p> <a
+                href="tel:+919215686747"
+                className=" hover:underline"
+              >
+                +91-9215686747
+              </a></p>
+
             </div>
 
             {/* EMAIL */}
             <div className="flex gap-4 items-center">
               <span className="text-2xl">✉️</span>
-              <p className="font-semibold">contact.jlautomobiles@gmail.com</p>
+              <p className="font-semibold">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=jlautomobiles@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  jlautomobiles@gmail.com
+                </a>
+              </p>
             </div>
 
           </div>
@@ -59,8 +78,8 @@ const VisitUs = () => {
           ></iframe>
         </div>
 
-      </div>
-    </div>
+      </div >
+    </div >
   );
 };
 

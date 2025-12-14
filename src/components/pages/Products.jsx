@@ -1,4 +1,5 @@
-import ProductCard from "./ProductCard"; import { useTheme } from "../components/context/ThemeContext";
+import ProductCard from "./ProductCard";
+import { useTheme } from "../context/ThemeContext";
 
 export const productList = [
   {

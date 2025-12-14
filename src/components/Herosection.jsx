@@ -16,13 +16,13 @@ const HeroSection = () => {
   };
 
   const slides = [
-    "hero1.jpg",
-    "hero2.jpg",
-    "hero3.jpg"
+    "hero1.png",
+    "hero2.png",
+    "hero3.png"
   ];
 
   return (
-    <section className="pt-15 relative w-full h-[80vh] md:h-[100vh] overflow-hidden">
+    <section className="pt-15 relative w-full h-[80vh] md:h-screen overflow-hidden">
 
       {/* CAROUSEL */}
       <Slider {...settings} className="h-full">
@@ -30,7 +30,7 @@ const HeroSection = () => {
           <div key={i}>
             <img
               src={src}
-              className="w-full h-[80vh] md:h-[100vh] object-cover"
+              className="w-full h-[80vh] md:h-screen object-cover"
               alt=""
             />
           </div>
@@ -43,12 +43,13 @@ const HeroSection = () => {
       {/* TEXT ON TOP */}
       <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 z-10">
 
-        <h1 className="bg-gradient-to-r from-(--primary-color) via-(--secondary-color) to-(--tertiary-color) bg-clip-text text-transparent text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+        <h1 className="bg-linear-to-r from-(--primary-color) via-(--secondary-color) to-(--tertiary-color) bg-clip-text text-transparent text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
           JL Automobiles
         </h1>
 
         <p className="text-white text-lg md:text-xl font-bold mb-6 drop-shadow-lg">
-          Forklift Rental • Hydraulic Hose • Spares & Maintenance
+          Your trusted partner for reliable forklifts and industrial solutions.
+
         </p>
 
         <div className="flex gap-4">

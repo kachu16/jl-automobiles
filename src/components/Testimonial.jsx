@@ -1,121 +1,82 @@
-import React from "react";
 import Slider from "react-slick";
+import { FaQuoteLeft, FaStar, FaUserCircle } from "react-icons/fa";
+import { testimonials } from "./data/testimonialData";
 import { useTheme } from "../components/context/ThemeContext";
 
-import {
-  FaTwitter,
-  FaFacebookF,
-  FaLinkedinIn
-} from "react-icons/fa";
-
-const testimonials = [
-  {
-    name: "Rahul Sharma",
-    role: "Customer",
-    review:
-      "JL Automobiles gave me the best car buying experience ever. The staff was extremely supportive and knowledgeable!",
-    image:
-      "https://randomuser.me/api/portraits/men/32.jpg",
-
-  },
-  {
-    name: "Priya Verma",
-    role: "Customer",
-    review:
-      "Excellent service and quick delivery. Their detailing and maintenance service is top-notch!",
-    image:
-      "https://randomuser.me/api/portraits/women/44.jpg",
-
-  },
-  {
-    name: "Aman Singh",
-    role: "Customer",
-    review:
-      "Highly satisfied with their support team. They helped me choose the perfect car for my family.",
-    image:
-      "https://randomuser.me/api/portraits/men/75.jpg"
-  }
-];
-
-const Testimonial = () => {
-    const { dark } = useTheme();
-  
-
+const Testimonials = () => {
   const settings = {
-    dots: false,
     arrows: false,
     infinite: true,
-    speed: 900,
-    slidesToShow: 1,
+    speed: 600,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3500
+    autoplaySpeed: 3500,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
+  const { dark } = useTheme();
 
   return (
-    <section className={`py-20 px-6 ${dark ? 'dark-bg2' : "bg-white"}`}>
-      <div className="max-w-4xl mx-auto">
+    <section className={`py-20 transition-all duration-300 ${dark ? "dark-bg2" : "bg-white"
+      }`}>
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl font-semibold">
+            What{" "}
+            <span className="text-(--primary-color)">
+              Our Customers Say
+            </span>
+          </h2>
+          <p
+            className={`max-w-2xl mx-auto mt-3 ${dark ? "text-gray-300" : "text-gray-600"
+              }`}
+          >
+            At JL Automobiles, we offer a complete range of forklift-related solutions
+            designed to support industries, warehouses, and manufacturing units.
+          </p>
+        </div>
 
-        {/* Heading */}
-        <h2 className="text-4xl font-semibold text-center mb-10">
-          What Our <span className="text-(--primary-color)">Clients Say</span>
-        </h2>
-
+        {/* SLIDER */}
         <Slider {...settings}>
-          {testimonials.map((t, i) => (
-            <div key={i} className="p-3">
-              <div
-                className="
-                  relative rounded-3xl p-10 shadow-lg 
-                  transition-all duration-500 border-2 border-gray-300
-                "
-              >
-                {/* TOP SECTION */}
-                <div className="flex items-center justify-between">
+          {testimonials.map((item, index) => (
+            <div key={index} className="p-3 ">
+              <div className={`rounded-2xl p-6 shadow-md hover:shadow-lg transition h-full ${dark ? "bg-black" : "bg-[#f5f7f9]"}`}>
+                {/* Quote */}
+                <FaQuoteLeft className="text-(--primary-color) text-4xl mb-4" />
 
-                  {/* PROFILE INFO */}
-                  <div className="flex items-center gap-4">
-
-                    {/* Image + Decorations */}
-                    <div className="relative">
-                      <img
-                        src={t.image}
-                        alt={t.name}
-                        className="w-16 h-16 rounded-full object-cover border-4 border-white shadow-md"
-                      />
-
-                      {/* Golden floating dots */}
-                      <span className="w-3 h-3 bg-(--secondary-color) rounded-full absolute -top-2 left-1"></span>
-                      <span className="w-2 h-2 bg-(--tertiary-color) rounded-full absolute top-3 -left-2"></span>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-bold">{t.name}</h3>
-                      <p className="text-(--primary-color)">{t.role}</p>
+                {/* User */}
+                <div className="flex items-center gap-4 mb-3">
+                  <FaUserCircle className={`text-5xl ${dark ? "text-white" : "text-gray-400"}`} />
+                  <div>
+                    <h3 className={`font-semibold text-lg ${dark ? "text-white" : "text-gray-900"}`}>
+                      {item.name}
+                    </h3>
+                    <div className="flex gap-1">
+                      {Array.from({ length: item.rating }).map((_, i) => (
+                        <FaStar
+                          key={i}
+                          className="text-(--primary-color) text-sm"
+                        />
+                      ))}
                     </div>
                   </div>
-
-            
                 </div>
 
-                {/* REVIEW TEXT */}
-                <p className={`text-lg leading-relaxed mt-6 ${dark ? "text-white" : "text-gray-700"}`}>
-                  “{t.review}”
+                {/* Text */}
+                <p className={` text-sm leading-relaxed ${dark ? "text-white" : "text-gray-600"}`}>
+                  “{item.text}”
                 </p>
 
-                {/* SOCIAL ICONS */}
-                <div className="flex gap-5 mt-8">
-                  <a className="p-3 rounded-full border text-(--primary-color) hover:bg-(--primary-color) hover:text-white transition">
-                    <FaTwitter size={18} />
-                  </a>
-                  <a className="p-3 rounded-full border text-(--primary-color) hover:bg-(--primary-color) hover:text-white transition">
-                    <FaFacebookF size={18} />
-                  </a>
-                  <a className="p-3 rounded-full border text-(--primary-color) hover:bg-(--primary-color) hover:text-white transition">
-                    <FaLinkedinIn size={18} />
-                  </a>
-                </div>
-
+                <button className="mt-3 text-sm font-medium text-(--primary-color) hover:underline">
+                  Contact Me
+                </button>
               </div>
             </div>
           ))}
@@ -125,4 +86,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default Testimonials;

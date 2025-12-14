@@ -28,6 +28,7 @@ const Footer = () => {
           <ul className="space-y-2">
             <li><Link to="/" className="hover:text-(--tertiary-color)">Home</Link></li>
             <li><Link to="/about" className="hover:text-(--tertiary-color)">About Us</Link></li>
+            <li><Link to="/products" className="hover:text-(--tertiary-color)">Products</Link></li>
             <li><Link to="/terms-and-conditions" className="hover:text-(--tertiary-color)">Terms & Conditions</Link></li>
           </ul>
         </div>
@@ -47,14 +48,34 @@ const Footer = () => {
             <li className="flex items-center gap-3">
               <span className="text-2xl">📞</span>
               <p>
-                09215686748 <br />
-                09446586748
+                <a
+                  href="tel:+919215686748"
+                  className=" hover:underline"
+                >
+                  +91-9215686748
+                </a>
+                <br />
+                <a
+                  href="tel:+919215686747"
+                  className=" hover:underline"
+                >
+                  +91-9215686747
+                </a>
               </p>
+
             </li>
 
             <li className="flex items-center gap-3">
               <span className="text-2xl">✉️</span>
-              <p>contact.jlautomobiles@gmail.com</p>
+              <p>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=jlautomobiles@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  jlautomobiles@gmail.com
+                </a>
+              </p>
             </li>
           </ul>
         </div>

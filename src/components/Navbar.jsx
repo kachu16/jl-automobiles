@@ -9,19 +9,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full shadow-md z-50 transition-all duration-300 ${
-        dark ? "dark-bg" : "bg-white"
-      }`}
+      className={`fixed top-0 left-0 w-full shadow-md z-50 transition-all duration-300 ${dark ? "dark-bg" : "bg-white"
+        }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
-
         {/* Logo */}
         <h1 className="text-3xl font-extrabold text-(--primary-color)">
           JL Automobiles
         </h1>
 
         {/* Desktop Menu */}
-        <div className={`hidden md:flex items-center gap-8 font-medium`}>
+        <div className="hidden md:flex items-center gap-8 font-medium">
           <ul className="flex gap-8 items-center">
             <li>
               <Link
@@ -40,6 +38,14 @@ const Navbar = () => {
                 About
               </Link>
             </li>
+            <li>
+              <Link
+                to="/products"
+                className="font-bold transition-all duration-300 hover:text-(--primary-color) hover:scale-105"
+              >
+                Products
+              </Link>
+            </li>
 
             <li>
               <Link
@@ -54,6 +60,7 @@ const Navbar = () => {
               <a
                 href="https://wa.me/+919729651574?text=Hello%20I%20need%20assistance%20regarding%20your%20services.%20Please%20help%20me%20with%20the%20details."
                 target="_blank"
+                rel="noreferrer"
                 className="bg-(--primary-color) font-bold text-white px-4 py-2 rounded transition-all duration-300 hover:bg-(--secondary-color) hover:scale-105"
               >
                 Contact
@@ -61,7 +68,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          {/* Desktop Theme Toggle (Rightmost) */}
+          {/* Desktop Theme Toggle */}
           <button
             className="cursor-pointer p-2 rounded-full border border-gray-400 transition-all duration-300 hover:scale-110"
             onClick={toggleTheme}
@@ -74,32 +81,55 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Hamburger */}
-        <div
-          className="md:hidden cursor-pointer transition-all duration-300 hover:scale-110"
-          onClick={() => setOpen(!open)}
-        >
-          <div className={`w-6 h-0.5 mb-1 ${dark ? "bg-white" : "bg-black"}`}></div>
-          <div className={`w-6 h-0.5 mb-1 ${dark ? "bg-white" : "bg-black"}`}></div>
-          <div className={`w-6 h-0.5 ${dark ? "bg-white" : "bg-black"}`}></div>
+        {/* Mobile Controls (Theme Left, Hamburger Right) */}
+        <div className="md:hidden flex items-center gap-4">
+          {/* Mobile Theme Toggle */}
+          <button
+            className="cursor-pointer p-2 rounded-full border border-gray-400 transition-all duration-300 hover:scale-110"
+            onClick={toggleTheme}
+          >
+            {dark ? (
+              <FaSun className="text-gray-200" />
+            ) : (
+              <FaMoon className="text-gray-700" />
+            )}
+          </button>
+
+          {/* Hamburger */}
+          <div
+            className="cursor-pointer transition-all duration-300 hover:scale-110"
+            onClick={() => setOpen(!open)}
+          >
+            <div
+              className={`w-6 h-0.5 mb-1 ${dark ? "bg-white" : "bg-black"
+                }`}
+            ></div>
+            <div
+              className={`w-6 h-0.5 mb-1 ${dark ? "bg-white" : "bg-black"
+                }`}
+            ></div>
+            <div
+              className={`w-6 h-0.5 ${dark ? "bg-white" : "bg-black"
+                }`}
+            ></div>
+          </div>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`md:hidden transition-all duration-300 overflow-hidden ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <ul
-          className={`flex flex-col gap-4 p-4 font-medium shadow-md transition-all duration-300 ${
-            dark ? "dark-bg" : "bg-white text-gray-700"
-          }`}
+          className={`flex flex-col gap-4 p-4 font-medium shadow-md transition-all duration-300 ${dark ? "dark-bg" : "bg-white text-gray-700"
+            }`}
         >
           <li>
             <Link
               to="/"
               className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
+              onClick={() => setOpen(false)}
             >
               Home
             </Link>
@@ -109,8 +139,18 @@ const Navbar = () => {
             <Link
               to="/about"
               className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
+              onClick={() => setOpen(false)}
             >
               About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/products"
+              className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
+              onClick={() => setOpen(false)}
+            >
+              Products
             </Link>
           </li>
 
@@ -118,31 +158,21 @@ const Navbar = () => {
             <Link
               to="/terms-and-conditions"
               className="transition-all duration-300 hover:text-(--primary-color) hover:translate-x-2"
+              onClick={() => setOpen(false)}
             >
               Terms & Conditions
             </Link>
           </li>
 
-          {/* Mobile Contact + Theme Toggle Side-by-Side */}
-          <li className="flex items-center justify-between gap-3">
+          <li>
             <a
               href="https://wa.me/+919729651574?text=Hello%20I%20need%20assistance%20regarding%20your%20services.%20Please%20help%20me%20with%20the%20details."
               target="_blank"
-              className="bg-(--primary-color) text-white px-4 py-2 rounded flex-1 text-center transition-all duration-300 hover:bg-(--secondary-color)"
+              rel="noreferrer"
+              className="bg-(--primary-color) text-white px-4 py-2 rounded text-center transition-all duration-300 hover:bg-(--secondary-color)"
             >
               Contact
             </a>
-
-            <button
-              className="cursor-pointer p-2 rounded-full border border-gray-400 transition-all duration-300 hover:scale-110"
-              onClick={toggleTheme}
-            >
-              {dark ? (
-                <FaSun className="text-gray-200" />
-              ) : (
-                <FaMoon className="text-gray-700" />
-              )}
-            </button>
           </li>
         </ul>
       </div>

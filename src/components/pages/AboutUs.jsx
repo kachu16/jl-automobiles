@@ -9,7 +9,7 @@ const AboutUs = () => {
         {/* Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-semibold">
-            About <span className="text-[var(--primary-color)]">Us</span>
+            About <span className="text-(--primary-color)">Us</span>
           </h2>
           <p className="text-gray-600  mt-4 text-lg">
             At JL Automobiles, our mission is to provide exceptional automotive services
@@ -36,7 +36,7 @@ const AboutUs = () => {
               experience. Quality, trust, and transparency are the pillars of our service philosophy.
             </p>
 
-            <button className="bg-[var(--primary-color)] text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-[var(--secondary-color)] transition-all duration-300">
+            <button className="bg-(--primary-color) text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-(--secondary-color) transition-all duration-300">
               Learn More →
             </button>
           </div>
