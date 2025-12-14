@@ -14,7 +14,6 @@ import { useTheme } from "../components/context/ThemeContext";
 export const services = [
     {
         id: 1,
-        icon: <FaTruckLoading className="text-[var(--primary-color)] text-3xl" />,
         title: "Forklift Rental Services",
         desc: "Affordable and reliable forklift rental options for short-term and long-term industrial needs, ensuring smooth and efficient material handling.",
     },

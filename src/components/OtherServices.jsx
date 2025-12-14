@@ -66,7 +66,7 @@ const OtherServices = () => {
     dots: true,
     arrows: false,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2500,
     speed: 600,
     slidesToShow: 1,
