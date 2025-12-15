@@ -12,15 +12,20 @@ const Testimonials = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3500,
+
     responsive: [
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          centerMode: false,
         },
       },
     ],
   };
+
   const { dark } = useTheme();
 
   return (
