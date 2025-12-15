@@ -1,58 +1,92 @@
-
 import React from "react";
+import { useTheme } from "../context/ThemeContext";
 
 const AboutUs = () => {
+  const { dark } = useTheme()
   return (
-    <section className="py-20 bg-[#f5f7f9]">
-      <div className="max-w-7xl mx-auto px-6">
+    <>
+      {/* HERO SECTION */}
+      <section
+        className="relative bg-center bg-no-repeat h-[300px] flex items-center"
+        style={{
+          backgroundImage:
+            "url('https://imgs.search.brave.com/YoK2eFjachAkgNnOoVkzzVJGYJE8eD0YQxsWMsqqwcc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aXFzZGlyZWN0b3J5/LmNvbS9hcnRpY2xl/cy9mb3JrbGlmdC9m/b3JrbGlmdC10cnVj/a3MvZm9ya2xpZnQt/dHJ1Y2stbWFzdC10/eXBlcy1vZi1zdGFn/ZXMuanBn')",
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black opacity-50"></div>
 
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-semibold">
-            About <span className="text-(--primary-color)">Us</span>
-          </h2>
-          <p className="text-gray-600  mt-4 text-lg">
-            At JL Automobiles, our mission is to provide exceptional automotive services
-            and a seamless car buying experience. With a passion for excellence and
-            customer satisfaction, we strive to deliver quality solutions tailored to your needs.
-          </p>
+        <div className="relative text-center text-white px-6 max-w-3xl mx-auto">
+          <h2 className="text-5xl font-semibold">About Us</h2>
         </div>
+      </section>
 
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      {/* CONTENT SECTION */}
+      <section className={`py-16  ${dark ? "dark-bg2" : "bg-[#f5f7f9]"}`}>
+        <div className="max-w-6xl mx-auto px-6">
 
-          {/* Text Section */}
-          <div className="space-y-6">
-            <p className="text-gray-700 leading-relaxed">
-              Founded with the vision of creating a trusted automotive hub, JL Automobiles
-              has been at the forefront of delivering innovative solutions, expert advice,
-              and reliable services. Our team of professionals ensures every client feels
-              valued and supported throughout their journey with us.
+          <h3 className="text-3xl font-bold mb-6">
+            About <span className="text-(--primary-color)">JL Automobiles</span>
+          </h3>
+
+          <div className={`space-y-5  leading-relaxed ${dark ? 'text-white' : 'text-gray-700'}`}>
+            <p>
+              JL Automobiles was founded in 2009 by two visionary friends,
+              <strong> Jamanlal</strong> and <strong>Sunder Singh</strong>, who
+              shared a simple but powerful belief: businesses deserve reliable
+              forklift solutions they can trust.
             </p>
 
-            <p className="text-gray-700 leading-relaxed">
-              We offer comprehensive services, from car maintenance and repairs to custom
-              modifications and accessories, all designed to enhance your vehicle and driving
-              experience. Quality, trust, and transparency are the pillars of our service philosophy.
+            <p>
+              Having worked for years in the industrial sector, they witnessed a
+              major challenge across companies—unreliable service partners,
+              expensive repairs, and machines breaking down when needed the
+              most.
             </p>
 
-            <button className="bg-(--primary-color) text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-xl hover:bg-(--secondary-color) transition-all duration-300">
-              Learn More →
-            </button>
-          </div>
+            <p>
+              Determined to change this, they left their stable jobs and began JL
+              Automobiles in a small rented workshop with limited tools, but with
+              a strong vision to deliver honest, affordable, and high-quality
+              forklift services.
+            </p>
 
-          {/* Image Section */}
-          <div className="flex justify-center">
-            <img
-              src="https://imgs.search.brave.com/1RcToshWaxUdZu8edu2NPQHQadOy-J4U9NJAgQaVo2I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9l/eHByZXNzaXZlLXJl/ZGhlYWQtYmVhcmRl/ZC1tYW4td2l0aC1o/YXRfMTc2NDIwLTMy/MjY2LmpwZz9zZW10/PWFpc19zZV9lbnJp/Y2hlZCZ3PTc0MCZx/PTgw"
-              alt="About Us"
-              className="rounded-3xl shadow-xl object-cover w-full h-96"
-            />
-          </div>
+            <blockquote className={`border-l-4 border-(--primary-color) pl-4 italic  ${dark ? "text-white" : "text-gray-800"}`}>
+              “We will build a company known for trust, expertise, and long-term
+              support.”
+            </blockquote>
 
+            <p>
+              Over the years, that vision has shaped JL Automobiles into a
+              leading forklift service provider. Today, the company offers a
+              complete range of solutions, including buying and selling
+              forklifts, repairing and customizing machines, preventive
+              maintenance, and high-quality spare parts supply.
+            </p>
+
+            <p>
+              With a dedicated rental fleet of <strong>25+ forklifts</strong>, JL
+              Automobiles ensures businesses never face downtime.
+            </p>
+
+            <p>
+              We proudly serve <strong>35+ companies</strong>, supported by a
+              team of <strong>20+ experienced professionals</strong>, many of
+              whom bring over <strong>15 years of industry expertise</strong>.
+              Every engineer is fully certified and trained to deliver precise,
+              safe, and reliable service.
+            </p>
+
+            <p>
+              Driven by passion and founded on trust, JL Automobiles continues to
+              grow while staying true to its original vision—providing dependable
+              forklift solutions that keep industries moving.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

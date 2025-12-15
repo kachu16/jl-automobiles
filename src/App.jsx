@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         <HeroSection />
         <Service />
         <OtherServices />
-        <ForkliftCategories/>
+        <ForkliftCategories />
         <Testimonial />
         <ForkliftSlider />
         <VisitUs />
@@ -63,7 +63,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/products/:id",
-    element: <ProductDetails />
+    element: (
+      <MainLayout>
+        <ProductDetails />
+      </MainLayout>
+    )
   }
 ]);
 

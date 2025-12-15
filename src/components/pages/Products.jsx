@@ -1,70 +1,12 @@
 import ProductCard from "./ProductCard";
 import { useTheme } from "../context/ThemeContext";
-
-export const productList = [
-  {
-    id: 1,
-    code: "8FB15",
-    title: "Toyota 8 series 4 Wheel Electric CB 1.5t Forklift",
-    capacity: "1500 kg",
-    image:
-      "https://imgs.search.brave.com/QleiXeaLHvHqTOYC8hB_8I1Z8eNebn56_xfZ21GGaKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mb3Jr/bGlmdC0yNjczNDU0/LmpwZw",
-  },
-  {
-    id: 2,
-    code: "8FB20",
-    title: "Toyota 8 series 4 Wheel Electric CB 2.0t Forklift",
-    capacity: "2000 kg",
-    image:
-      "https://imgs.search.brave.com/QleiXeaLHvHqTOYC8hB_8I1Z8eNebn56_xfZ21GGaKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mb3Jr/bGlmdC0yNjczNDU0/LmpwZw",
-  },
-  {
-    id: 3,
-    code: "8FB25",
-    title: "Toyota 8 series 4 Wheel Electric CB 2.5t Forklift",
-    capacity: "2500 kg",
-    image:
-      "https://imgs.search.brave.com/QleiXeaLHvHqTOYC8hB_8I1Z8eNebn56_xfZ21GGaKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mb3Jr/bGlmdC0yNjczNDU0/LmpwZw",
-  },
-  {
-    id: 3,
-    code: "8FB25",
-    title: "Toyota 8 series 4 Wheel Electric CB 2.5t Forklift",
-    capacity: "2500 kg",
-    image:
-      "https://imgs.search.brave.com/QleiXeaLHvHqTOYC8hB_8I1Z8eNebn56_xfZ21GGaKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mb3Jr/bGlmdC0yNjczNDU0/LmpwZw",
-  },
-  {
-    id: 3,
-    code: "8FB25",
-    title: "Toyota 8 series 4 Wheel Electric CB 2.5t Forklift",
-    capacity: "2500 kg",
-    image:
-      "https://imgs.search.brave.com/QleiXeaLHvHqTOYC8hB_8I1Z8eNebn56_xfZ21GGaKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mb3Jr/bGlmdC0yNjczNDU0/LmpwZw",
-  },
-  {
-    id: 3,
-    code: "8FB25",
-    title: "Toyota 8 series 4 Wheel Electric CB 2.5t Forklift",
-    capacity: "2500 kg",
-    image:
-      "https://imgs.search.brave.com/QleiXeaLHvHqTOYC8hB_8I1Z8eNebn56_xfZ21GGaKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mb3Jr/bGlmdC0yNjczNDU0/LmpwZw",
-  },
-  {
-    id: 3,
-    code: "8FB25",
-    title: "Toyota 8 series 4 Wheel Electric CB 2.5t Forklift",
-    capacity: "2500 kg",
-    image:
-      "https://imgs.search.brave.com/QleiXeaLHvHqTOYC8hB_8I1Z8eNebn56_xfZ21GGaKY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9mb3Jr/bGlmdC0yNjczNDU0/LmpwZw",
-  },
-];
+import { productList } from "../data/productList";
 
 const Products = () => {
   const { dark } = useTheme();
 
   return (
-    <section className="py-20 bg-[#f5f7f9]">
+    <section className={`py-20  ${dark ? "dark-bg2" : "bg-[#f5f7f9]"}`}>
       <div className="max-w-7xl mx-auto px-4">
 
         <div className="text-center mb-10">

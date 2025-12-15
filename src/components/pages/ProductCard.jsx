@@ -1,13 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
-
+  const { dark } = useTheme();
   return (
     <div
       onClick={() => navigate(`/products/${product.id}`)}
-      className="bg-white rounded-xl shadow-md p-6 cursor-pointer
-                 hover:shadow-xl transition-all duration-300"
+      className={`rounded-xl shadow-md p-6 cursor-pointer
+                 hover:shadow-xl transition-all duration-300 ${dark ? "bg-black" : "bg-white"} `}
     >
       <img
         src={product.image}
@@ -16,14 +17,14 @@ const ProductCard = ({ product }) => {
       />
 
       <span className="inline-block bg-(--primary-color) text-white text-xs px-3 py-1 rounded">
-        {product.code}
+        {product.category}
       </span>
 
-      <h3 className="mt-3 font-semibold text-lg">
+      <h3 className={`mt-3 font-semibold text-lg ${dark ? "text-white" : "text-black"}`}>
         {product.title}
       </h3>
 
-      <p className="mt-2 text-gray-600">
+      <p className={`mt-2  ${dark ? "text-white" : "text-gray-600"}`}>
         Capacity: <strong>{product.capacity}</strong>
       </p>
     </div>

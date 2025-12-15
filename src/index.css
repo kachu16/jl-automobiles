@@ -101,3 +101,7 @@ html {
   color: var(--primary-color) !important;
   opacity: 1;
 }
+
+td {
+  padding-left: 10px;
+}

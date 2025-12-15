@@ -9,7 +9,7 @@ const ForkliftSlider = () => {
         dots: false,
         arrows: false,
         infinite: true,
-        slidesToShow: 10,
+        slidesToShow: 7,
         slidesToScroll: 1,
 
         autoplay: true,
